@@ -1754,11 +1754,279 @@ display: none;
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVhVzV6ZEdGc2JDNXdZV05yWVdkbGN5aGNJblJwWkhseVhDSXBYRzVnWUdBaWZRPT0gLS0+XG5cbmBgYHJcbmluc3RhbGwucGFja2FnZXMoXCJ0aWR5clwiKVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInRpZHlyXCIpXG5gYGAifQ== -->
+<pre class="r"><code>install.packages(&quot;tidyr&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogUnRvb2xzIGlzIHJlcXVpcmVkIHRvIGJ1aWxkIFIgcGFja2FnZXMgYnV0IGlzIG5vdCBjdXJyZW50bHkgaW5zdGFsbGVkLiBQbGVhc2UgZG93bmxvYWQgYW5kIGluc3RhbGwgdGhlIGFwcHJvcHJpYXRlIHZlcnNpb24gb2YgUnRvb2xzIGJlZm9yZSBwcm9jZWVkaW5nOlxuXG5odHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvUnRvb2xzL1xuIn0= -->
+<pre><code>WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVhVzV6ZEdGc2JDNXdZV05yWVdkbGN5aGNJbmgwYzF3aUtWeHVZR0JnSW4wPSAtLT5cblxuYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInh0c1wiKVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcInh0c1wiKVxuYGBgIn0= -->
+<pre class="r"><code>install.packages(&quot;xts&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogUnRvb2xzIGlzIHJlcXVpcmVkIHRvIGJ1aWxkIFIgcGFja2FnZXMgYnV0IGlzIG5vdCBjdXJyZW50bHkgaW5zdGFsbGVkLiBQbGVhc2UgZG93bmxvYWQgYW5kIGluc3RhbGwgdGhlIGFwcHJvcHJpYXRlIHZlcnNpb24gb2YgUnRvb2xzIGJlZm9yZSBwcm9jZWVkaW5nOlxuXG5odHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvUnRvb2xzL1xuIn0= -->
+<pre><code>WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>tidyr</p>
+<p>In finance, you will often download data from Bloomberg or Yahoo
+Finance where each column is a different asset, and each row is a date.
+This is called wide data.</p>
+<p>However, packages like dplyr and ggplot2 strongly prefer long
+data—where every row is a single observation. The tidyr package provides
+two functions to flip your data back and forth: pivot_longer() and
+pivot_wider().</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHViR2xpY21GeWVTaDBhV1I1Y2lsY2JteHBZbkpoY25rb1pIQnNlWElwWEc1Y2JpTWdNUzRnVkdobElGZHBaR1VnUkdGMFlTQW9WSGx3YVdOaGJDQm1hVzVoYm1ObElHUnZkMjVzYjJGa0lHWnZjbTFoZENsY2JuZHBaR1ZmY0hKcFkyVnpJRHd0SUdSaGRHRXVabkpoYldVb1hHNGdJRVJoZEdVZ1BTQmpLRndpTWpBeU5DMHdNUzB3TVZ3aUxDQmNJakl3TWpRdE1ERXRNREpjSWlrc1hHNGdJRUZCVUV3Z1BTQmpLREU0TUM0MUxDQXhPREV1TWlrc1hHNGdJRTFUUmxRZ1BTQmpLRE16TUM0eExDQXpNekl1TlNsY2JpbGNibmRwWkdWZmNISnBZMlZ6WEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5saWJyYXJ5KHRpZHlyKVxubGlicmFyeShkcGx5cilcblxuIyAxLiBUaGUgV2lkZSBEYXRhIChUeXBpY2FsIGZpbmFuY2UgZG93bmxvYWQgZm9ybWF0KVxud2lkZV9wcmljZXMgPC0gZGF0YS5mcmFtZShcbiAgRGF0ZSA9IGMoXCIyMDI0LTAxLTAxXCIsIFwiMjAyNC0wMS0wMlwiKSxcbiAgQUFQTCA9IGMoMTgwLjUsIDE4MS4yKSxcbiAgTVNGVCA9IGMoMzMwLjEsIDMzMi41KVxuKVxud2lkZV9wcmljZXNcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5cilcbmxpYnJhcnkoZHBseXIpXG5cbiMgMS4gVGhlIFdpZGUgRGF0YSAoVHlwaWNhbCBmaW5hbmNlIGRvd25sb2FkIGZvcm1hdClcbndpZGVfcHJpY2VzIDwtIGRhdGEuZnJhbWUoXG4gIERhdGUgPSBjKFwiMjAyNC0wMS0wMVwiLCBcIjIwMjQtMDEtMDJcIiksXG4gIEFBUEwgPSBjKDE4MC41LCAxODEuMiksXG4gIE1TRlQgPSBjKDMzMC4xLCAzMzIuNSlcbilcbndpZGVfcHJpY2VzXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyr)
+library(dplyr)
+
+# 1. The Wide Data (Typical finance download format)
+wide_prices &lt;- data.frame(
+  Date = c(&quot;2024-01-01&quot;, &quot;2024-01-02&quot;),
+  AAPL = c(180.5, 181.2),
+  MSFT = c(330.1, 332.5)
+)
+wide_prices</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkltUmhkR0V1Wm5KaGJXVWlYU3dpYm5KdmR5STZNaXdpYm1OdmJDSTZNeXdpYzNWdGJXRnllU0k2ZXlKRVpYTmpjbWx3ZEdsdmJpSTZXeUprWmlCYk1pRERseUF6WFNKZGZYMHNJbkprWmlJNklrZzBjMGxCUVVGQlFVRkJRVUp5TVZNek1IWkVUVUpESzBwWk1ubG5hVXh6V0M5Q01YQlVPRlU1ZFdobk4wVnNRbVJOU21Wek5qTnlRMnhyTnpKbmVqRjZZams0VG1Gck9Xd3lXV0pwUzBOc1lXSTJOeXQ1TnpNNVdFcFFiekp1YTFSc01FRnZUMEYzUTNCUmNFTlBlR3hOZFRSUVFVSjVhV3BCTkRRd1JsZzNWMUpIV0ZkNVJVSlRTeXR0UVhwU04ySlVkSEZZVW14eldqaFNiSEpRWVV3eWRtVXhla1JwWkhKM2J6ZFNZMUpNWVZKV2JFZFdMMGhhVlU0d01FTnVORXhDWVZsd1VtMUpOV1p6UjAxbFRXbFVWRWxHWkhGalZVUnZaVkE1TkZwRFdXbDBZM3BKVkd4WmExZGhja0p4U25CUWIySldVUzlRTkRSdGFHbDJOak5MZEc5NmNYQkxSelJKV2l0bFRsQXpRUzlWWldWRlMweDVORXRDTnpremRXcGpRVGRaUlZOU04zZFdOMGt4VkRCMGJuSmhRa1IyU1RadlVVbEpiblJETlc5TFdFOURTRzlrUW1SalkyMDVXalpPT1hRd04zUkdMM1Z5YUZWUGEyMXJkeTh4Y1dGd2NWb3hkMHRPV1Zwaksza3ZNVUZZWmxoblNUbDRUMVZrYkRBelYyRm1WVkFyYUd0d2JFeHliRzlzZW1zMEsyeFJjRGgxZEZObGFERk9VRm92YmxseWRrOVRhSGRKTVZKdVJXSk5UMVIxYTAwdmVtUllPWGhzUXl0clYyMWxiRlpxT1VVemFYVTNWbEpxUWtGQlFTSjkgLS0+XG5cbjxkaXYgZGF0YS1wYWdlZHRhYmxlPVwiZmFsc2VcIj5cbiAgPHNjcmlwdCBkYXRhLXBhZ2VkdGFibGUtc291cmNlIHR5cGU9XCJhcHBsaWNhdGlvbi9qc29uXCI+XG57XCJjb2x1bW5zXCI6W3tcImxhYmVsXCI6W1wiRGF0ZVwiXSxcIm5hbWVcIjpbMV0sXCJ0eXBlXCI6W1wiY2hyXCJdLFwiYWxpZ25cIjpbXCJsZWZ0XCJdfSx7XCJsYWJlbFwiOltcIkFBUExcIl0sXCJuYW1lXCI6WzJdLFwidHlwZVwiOltcImRibFwiXSxcImFsaWduXCI6W1wicmlnaHRcIl19LHtcImxhYmVsXCI6W1wiTVNGVFwiXSxcIm5hbWVcIjpbM10sXCJ0eXBlXCI6W1wiZGJsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX1dLFwiZGF0YVwiOlt7XCIxXCI6XCIyMDI0LTAxLTAxXCIsXCIyXCI6XCIxODAuNVwiLFwiM1wiOlwiMzMwLjFcIn0se1wiMVwiOlwiMjAyNC0wMS0wMlwiLFwiMlwiOlwiMTgxLjJcIixcIjNcIjpcIjMzMi41XCJ9XSxcIm9wdGlvbnNcIjp7XCJjb2x1bW5zXCI6e1wibWluXCI6e30sXCJtYXhcIjpbMTBdLFwidG90YWxcIjpbM119LFwicm93c1wiOntcIm1pblwiOlsxMF0sXCJtYXhcIjpbMTBdLFwidG90YWxcIjpbMl19LFwicGFnZXNcIjp7fX19XG4gIDxcL3NjcmlwdD5cbjxcL2Rpdj5cblxuPCEtLSBybmItZnJhbWUtZW5kIC0tPlxuIn0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mywic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMiDDlyAzXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJyMVMzMHZETUJDK0pZMnlnaUxzWC9CMXBUOFU5dWhnN0VsQmRNSmVzNjNyQ2xrNzJnejF6Yjk4TmFrOWwyWWJpS0NsYWI2Nyt5NzM5WEpQbzJua1RsMEFvT0F3Q3BRcENPeGxNdTRQQUJ5aWpBNDQwRlg3V1JHWFd5RUJTSyttQXpSN2JUdHFYUmxzWjhSbHJQYUwydmUxekRpZHJ3bzdSY1JMYVJWbEdWL0haVU4wMENuNExCYVlwUm1JNWZzR01lTWlUVElGZHFjVURvZVA5NFpDWWl0Y3pJVGxZa1dhckJxSnBQb2JWUS9QNDRtaGl2NjNLdG96cXBLRzRJWitlTlAzQS9VZWVFS0x5NEtCNzkzdWpjQTdZRVNSN3dWN0kxVDB0bnJhQkR2STZvUUlJbnRDNW9LWE9DSG9kQmRjY205WjZOOXQwN3RGL3VyaFVPa21rdy8xcWFwcVoxd0tOWVpjK3kvMUFYZlhnSTl4T1VkbDAzV2FmVVAraGtwbExybG9sems0K2xRcDh1dFNlaDFOUFovbllydk9TaHdJMVJuRWJNT1R1a00vemRYOXhsQytrV21lbFZqOUUzaXU3VlJqQkFBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Date"],"name":[1],"type":["chr"],"align":["left"]},{"label":["AAPL"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["MSFT"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2024-01-01","2":"180.5","3":"330.1"},{"1":"2024-01-02","2":"181.2","3":"332.5"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVJeUF5TGlCTllXdHBibWNnYVhRZ1RHOXVaMXh1Ykc5dVoxOXdjbWxqWlhNZ1BDMGdkMmxrWlY5d2NtbGpaWE1nSlQ0bFhHNGdJSEJwZG05MFgyeHZibWRsY2loY2JpQWdJQ0JqYjJ4eklEMGdZeWhCUVZCTUxDQk5VMFpVS1N3Z0lDQWdJQ0FqSUZSb1pTQmpiMngxYlc1eklIZGxJSGRoYm5RZ2RHOGdiV1ZzZENCa2IzZHVYRzRnSUNBZ2JtRnRaWE5mZEc4Z1BTQmNJbFJwWTJ0bGNsd2lMQ0FnSUNBZ0lDQWpJRlJvWlNCdVpYY2dZMjlzZFcxdUlHNWhiV1VnWm05eUlIUm9aU0JqYjJ4MWJXNGdhR1ZoWkdWeWMxeHVJQ0FnSUhaaGJIVmxjMTkwYnlBOUlGd2lVSEpwWTJWY0lpQWdJQ0FnSUNBZ0l5QlVhR1VnYm1WM0lHTnZiSFZ0YmlCdVlXMWxJR1p2Y2lCMGFHVWdZV04wZFdGc0lHNTFiV0psY25OY2JpQWdLVnh1WEc1c2IyNW5YM0J5YVdObGMxeHVZR0JnSW4wPSAtLT5cblxuYGBgclxuIyAyLiBNYWtpbmcgaXQgTG9uZ1xubG9uZ19wcmljZXMgPC0gd2lkZV9wcmljZXMgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYyhBQVBMLCBNU0ZUKSwgICAgICAjIFRoZSBjb2x1bW5zIHdlIHdhbnQgdG8gbWVsdCBkb3duXG4gICAgbmFtZXNfdG8gPSBcIlRpY2tlclwiLCAgICAgICAjIFRoZSBuZXcgY29sdW1uIG5hbWUgZm9yIHRoZSBjb2x1bW4gaGVhZGVyc1xuICAgIHZhbHVlc190byA9IFwiUHJpY2VcIiAgICAgICAgIyBUaGUgbmV3IGNvbHVtbiBuYW1lIGZvciB0aGUgYWN0dWFsIG51bWJlcnNcbiAgKVxuXG5sb25nX3ByaWNlc1xuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyAyLiBNYWtpbmcgaXQgTG9uZ1xubG9uZ19wcmljZXMgPC0gd2lkZV9wcmljZXMgJT4lXG4gIHBpdm90X2xvbmdlcihcbiAgICBjb2xzID0gYyhBQVBMLCBNU0ZUKSwgICAgICAjIFRoZSBjb2x1bW5zIHdlIHdhbnQgdG8gbWVsdCBkb3duXG4gICAgbmFtZXNfdG8gPSBcIlRpY2tlclwiLCAgICAgICAjIFRoZSBuZXcgY29sdW1uIG5hbWUgZm9yIHRoZSBjb2x1bW4gaGVhZGVyc1xuICAgIHZhbHVlc190byA9IFwiUHJpY2VcIiAgICAgICAgIyBUaGUgbmV3IGNvbHVtbiBuYW1lIGZvciB0aGUgYWN0dWFsIG51bWJlcnNcbiAgKVxuXG5sb25nX3ByaWNlc1xuYGBgIn0= -->
+<pre class="r"><code># 2. Making it Long
+long_prices &lt;- wide_prices %&gt;%
+  pivot_longer(
+    cols = c(AAPL, MSFT),      # The columns we want to melt down
+    names_to = &quot;Ticker&quot;,       # The new column name for the column headers
+    values_to = &quot;Price&quot;        # The new column name for the actual numbers
+  )
+
+long_prices</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkluUmliRjlrWmlJc0luUmliQ0lzSW1SaGRHRXVabkpoYldVaVhTd2libkp2ZHlJNk5Dd2libU52YkNJNk15d2ljM1Z0YldGeWVTSTZleUpCSUhScFltSnNaU0k2V3lJMElNT1hJRE1pWFgxOUxDSnlaR1lpT2lKSU5ITkpRVUZCUVVGQlFVRkNjbFpVTXpBdlEwMUNReXR5VXpKSFNsSnZWQzluVm1aWFpscEVSWGcwYkVsVWVIQlJhRkZVV0hOeldYTkdaekl3Y0ZkdllpODNhSGgwYkU1VWNtOUtRMUp3WkV0TU1TczVPVE5rZERkMmRXSnFRVXB1V1d0RVFVRlJiMGt3UTFsT2IwVTVha2xtWkVoblF6RTVZMFZEUTIweU9YUXlVMk5pTkZGRGMwUnpWa2hYUXpkV01tVnhNVGR1UW5CblQzVlpjakptVm5ScWJrMTJNR3RYYzNCdGFVbHFibkZzUjFWd1dIZFdOVEZ6YVZKV1JIZGhVM2QzY1cxVFozSldOMWRoUkUxMWEydFhjV3BtWTBSRGJIWnFTa2h4VFhCaFNGSXZjRVpIZFM5bldGZFhkMnRyT0dwelNFZHRjVzFyTVVaTk1GbHRhU3RYWm5sVFNXUnZlWEJ0WTFGSmRuVlBlRFoyZGpSa1oxRlNOMnRJYnlzeWRTdFFZblJESzNaU0swOUVLMHRPZEM5R04yNXVkVVpvZWtRd1dFZ3ZiamhrTVdjMWQyc3djbVEwVW5OdVZtRkhSMGxvTTFGeFlqbDVORk5RVFdRM2FEWkJlalEwY1Rkak1XMHljMFUxZG5rcmVrcDRZWFJoUkhNMUt6RllPVVpWWW5kYWEzbGlSM0EyVFhoUFEzTlVXRVk0UVZCellrRTVPRzl0Y1hsVU9VMTJhM3BMYkZkYU5IRktaVFZzZG5GUk5saHZjakIxVm1FeUwyOVRXbE5LZWxOeVRtTlpZVFpOTW1sNlRsWTVWVWhVYnpKMGRYY3pkWEpMTVZOeVNUQjRLMjltWVVsc1JtaE1hMFZCUVVFOUluMD0gLS0+XG5cbjxkaXYgZGF0YS1wYWdlZHRhYmxlPVwiZmFsc2VcIj5cbiAgPHNjcmlwdCBkYXRhLXBhZ2VkdGFibGUtc291cmNlIHR5cGU9XCJhcHBsaWNhdGlvbi9qc29uXCI+XG57XCJjb2x1bW5zXCI6W3tcImxhYmVsXCI6W1wiRGF0ZVwiXSxcIm5hbWVcIjpbMV0sXCJ0eXBlXCI6W1wiY2hyXCJdLFwiYWxpZ25cIjpbXCJsZWZ0XCJdfSx7XCJsYWJlbFwiOltcIlRpY2tlclwiXSxcIm5hbWVcIjpbMl0sXCJ0eXBlXCI6W1wiY2hyXCJdLFwiYWxpZ25cIjpbXCJsZWZ0XCJdfSx7XCJsYWJlbFwiOltcIlByaWNlXCJdLFwibmFtZVwiOlszXSxcInR5cGVcIjpbXCJkYmxcIl0sXCJhbGlnblwiOltcInJpZ2h0XCJdfV0sXCJkYXRhXCI6W3tcIjFcIjpcIjIwMjQtMDEtMDFcIixcIjJcIjpcIkFBUExcIixcIjNcIjpcIjE4MC41XCJ9LHtcIjFcIjpcIjIwMjQtMDEtMDFcIixcIjJcIjpcIk1TRlRcIixcIjNcIjpcIjMzMC4xXCJ9LHtcIjFcIjpcIjIwMjQtMDEtMDJcIixcIjJcIjpcIkFBUExcIixcIjNcIjpcIjE4MS4yXCJ9LHtcIjFcIjpcIjIwMjQtMDEtMDJcIixcIjJcIjpcIk1TRlRcIixcIjNcIjpcIjMzMi41XCJ9XSxcIm9wdGlvbnNcIjp7XCJjb2x1bW5zXCI6e1wibWluXCI6e30sXCJtYXhcIjpbMTBdLFwidG90YWxcIjpbM119LFwicm93c1wiOntcIm1pblwiOlsxMF0sXCJtYXhcIjpbMTBdLFwidG90YWxcIjpbNF19LFwicGFnZXNcIjp7fX19XG4gIDxcL3NjcmlwdD5cbjxcL2Rpdj5cblxuPCEtLSBybmItZnJhbWUtZW5kIC0tPlxuIn0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6Mywic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI0IMOXIDMiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCclZUMzAvQ01CQytyUzJHSlJvVC9nVmZXZlpERXg0bElUeHBRaFFUWHNzWXNGZzIwcFdvYi83aHh0bE5Ucm9KQ1JwZEtMMSs5OTNkdDd2dWJqQUpuWWtEQUFRb0kwQ1lOb0U5aklmZEhnQzE5Y0VDQ20yOXQyU2NiNFFDc0RzVkhXQzdWMmVxMTduQnBnT3VZcjJmVnRqbk12MGtXc3BtaUlqbnFsR1VwWHdWNTFzaVJWRHdhU3d3cW1TZ3JWN1dhRE11a2tXcWpmY0RDbHZqSkhxTXBhSFIvcEZHdS9nWFdXd2trOGpzSEdtcW1rMUZNMFltaStXZnlTSWRveXBtY1FJdnVPeDZ2djRkZ1FSN2tIbysydStQYnRDK3ZSK09EK0tOdC9GN25udUZoekQwWEgvbjhkMWc1d2swcmQ0UnNuVmFHR0loM1FxYjl5NFNQTWQ3aDZBejQ0cTdjMW0yc0U1dnkrekp4YXRhRHM1KzFYOUZVYndaa3liR3A2TXhPQ3NUWEY4QVBzYkE5OG9tcXlUOU12a3pLbFdaNHFKZTVsdnFRNlhvcjB1VmEyL29TWlNKelNyTmNZYTZNMml6TlY5VUhUbzJ0dXczdXJLMVNySTB4K29mYUlsRmhMa0VBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Date"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Ticker"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Price"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2024-01-01","2":"AAPL","3":"180.5"},{"1":"2024-01-01","2":"MSFT","3":"330.1"},{"1":"2024-01-02","2":"AAPL","3":"181.2"},{"1":"2024-01-02","2":"MSFT","3":"332.5"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>You have downloaded a small sample of government bond yields across
+different maturities. The data is currently “wide,” and you need it
+“long” so you can eventually plot a yield curve.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZbTl1WkY5NWFXVnNaSE5mZDJsa1pTQThMU0JrWVhSaExtWnlZVzFsS0Z4dUlDQkVZWFJsSUQwZ1l5aGNJakl3TWpRdE1ETXRNREZjSWl3Z1hDSXlNREkwTFRBekxUQXlYQ0lwTEZ4dUlDQlphV1ZzWkY4eVdYSWdQU0JqS0RRdU5UVXNJRFF1TlRncExGeHVJQ0JaYVdWc1pGOHhNRmx5SUQwZ1l5ZzBMakl3TENBMExqSTFLU3hjYmlBZ1dXbGxiR1JmTXpCWmNpQTlJR01vTkM0ek5Td2dOQzR6T0NsY2JpbGNibUp2Ym1SZmVXbGxiR1J6WDNkcFpHVmNibUJnWUNKOSAtLT5cblxuYGBgclxuYm9uZF95aWVsZHNfd2lkZSA8LSBkYXRhLmZyYW1lKFxuICBEYXRlID0gYyhcIjIwMjQtMDMtMDFcIiwgXCIyMDI0LTAzLTAyXCIpLFxuICBZaWVsZF8yWXIgPSBjKDQuNTUsIDQuNTgpLFxuICBZaWVsZF8xMFlyID0gYyg0LjIwLCA0LjI1KSxcbiAgWWllbGRfMzBZciA9IGMoNC4zNSwgNC4zOClcbilcbmJvbmRfeWllbGRzX3dpZGVcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm9uZF95aWVsZHNfd2lkZSA8LSBkYXRhLmZyYW1lKFxuICBEYXRlID0gYyhcIjIwMjQtMDMtMDFcIiwgXCIyMDI0LTAzLTAyXCIpLFxuICBZaWVsZF8yWXIgPSBjKDQuNTUsIDQuNTgpLFxuICBZaWVsZF8xMFlyID0gYyg0LjIwLCA0LjI1KSxcbiAgWWllbGRfMzBZciA9IGMoNC4zNSwgNC4zOClcbilcbmJvbmRfeWllbGRzX3dpZGVcbmBgYCJ9 -->
+<pre class="r"><code>bond_yields_wide &lt;- data.frame(
+  Date = c(&quot;2024-03-01&quot;, &quot;2024-03-02&quot;),
+  Yield_2Yr = c(4.55, 4.58),
+  Yield_10Yr = c(4.20, 4.25),
+  Yield_30Yr = c(4.35, 4.38)
+)
+bond_yields_wide</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkltUmhkR0V1Wm5KaGJXVWlYU3dpYm5KdmR5STZNaXdpYm1OdmJDSTZOQ3dpYzNWdGJXRnllU0k2ZXlKRVpYTmpjbWx3ZEdsdmJpSTZXeUprWmlCYk1pRERseUEwWFNKZGZYMHNJbkprWmlJNklrZzBjMGxCUVVGQlFVRkJRVUp6TVZSVVYzWkRVVUpCWkRrMlRrWnZZVmhSZGpsQ2NsRnJkMDAxVG1sRU9VRmxWVVoyVWxWV2J6QmhWMHBQVVhKTVV6azVXbVZpTjNGdmFtMHdNa1pWYUVGaE1rMTZUSHBLZFdSc05XNWtOUzlGYTBkcmQwZEJSVU5DWTFGeFZXRjNhamc1WlZoS1UzZEJXVEJTT0RsWlRrUllPWEZ3U3pZMk1WVkJUMUlyVkhkamQyeG9NaTkwV1ZVM2FUZ3pSMUZ4V0dFemRYZzVhREpZU0RaWWVHUjFVMnQ1V0ZOeGJrdE5MMFpLY1RKUVVrbGFUMHRYWVhCNFEzcEVVVXQzSzFNNFVtTjVSM2xXWVRkQk4yODNRUzk2VmtzMVpVRjFibXhUVjFSMVJFbFlUU3R0TkdWS1YzUXhhMlZrY0V4dFNYUk5Sa0l5YWtKdllXRlFMMU5XZGxVeGRXRjVUSEUyVGpKMGIwbGhaM1ZFWTA5UlJtdFNZMDFQTlRkUk5HSkxVa2c0WTFkVWNuSjRUVXhDZHpOSk1VaFdialpWYmxCdGVraHJjbkJvVVdkcFFrTlFNM1JOSzJ4eFVFY3dibmh4SzBWRmNqUjVPSEl3Y0VVemRsWTRWemRxZUdaRlZFbEtPRFpXWmxST1JIUnlablJUTm5OTldpOWhlbG8wWmtGQ09ISkJiVEk1Ums5ak5VTmlURlF4UWpodlJrcFdTME5JWWxwVWNHSnVlWFJHTDJ4NlMzSkNPVlJ5SzJWR00wYzNlVWRuWldsUE5FOVpiREpMTVRjNVFuWmpNREl2VFZaVFZVdHBkbmxIY1hRdlFUaDZUWE0zYjNaQ1VVRkJJbjA9IC0tPlxuXG48ZGl2IGRhdGEtcGFnZWR0YWJsZT1cImZhbHNlXCI+XG4gIDxzY3JpcHQgZGF0YS1wYWdlZHRhYmxlLXNvdXJjZSB0eXBlPVwiYXBwbGljYXRpb24vanNvblwiPlxue1wiY29sdW1uc1wiOlt7XCJsYWJlbFwiOltcIkRhdGVcIl0sXCJuYW1lXCI6WzFdLFwidHlwZVwiOltcImNoclwiXSxcImFsaWduXCI6W1wibGVmdFwiXX0se1wibGFiZWxcIjpbXCJZaWVsZF8yWXJcIl0sXCJuYW1lXCI6WzJdLFwidHlwZVwiOltcImRibFwiXSxcImFsaWduXCI6W1wicmlnaHRcIl19LHtcImxhYmVsXCI6W1wiWWllbGRfMTBZclwiXSxcIm5hbWVcIjpbM10sXCJ0eXBlXCI6W1wiZGJsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX0se1wibGFiZWxcIjpbXCJZaWVsZF8zMFlyXCJdLFwibmFtZVwiOls0XSxcInR5cGVcIjpbXCJkYmxcIl0sXCJhbGlnblwiOltcInJpZ2h0XCJdfV0sXCJkYXRhXCI6W3tcIjFcIjpcIjIwMjQtMDMtMDFcIixcIjJcIjpcIjQuNTVcIixcIjNcIjpcIjQuMjBcIixcIjRcIjpcIjQuMzVcIn0se1wiMVwiOlwiMjAyNC0wMy0wMlwiLFwiMlwiOlwiNC41OFwiLFwiM1wiOlwiNC4yNVwiLFwiNFwiOlwiNC4zOFwifV0sXCJvcHRpb25zXCI6e1wiY29sdW1uc1wiOntcIm1pblwiOnt9LFwibWF4XCI6WzEwXSxcInRvdGFsXCI6WzRdfSxcInJvd3NcIjp7XCJtaW5cIjpbMTBdLFwibWF4XCI6WzEwXSxcInRvdGFsXCI6WzJdfSxcInBhZ2VzXCI6e319fVxuICA8XC9zY3JpcHQ+XG48XC9kaXY+XG5cbjwhLS0gcm5iLWZyYW1lLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6NCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMiDDlyA0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJzMVRUV3ZDUUJBZDk2TkZvYVhRdjlCclFrd001TmlEOUFlVUZ2UlVWbzBhV0pPUXJMUzk5WmViN3Fvam0wMkZVaEFhMk16THpKdWRsNW5kNS9Fa0drd0dBRUNCY1FxVWF3ajg5ZVhKU3dBWTBSODlZTkRYOXFwSzY2MVVBT1IrVHdjd2xoMi90WVU3aTgzR1FxWGEzdXg5aDJYSDZYeGR1U2t5WFNxbktNL0ZKcTJQUklaT0tXYXB4Q3pEUUt3K1M4UmN5R3lWYTdBN283QS96Vks1ZUF1bmxTV1R1RElYTSttNGVKV3Qxa2VkcExtSXRNRkIyakJvYWFQL1NWdlUxdWF5THE2TjJ0b0lhZ3VEY09RRmtSY01PNTdRNGJLUkg4Y1dUcnJ4TUxCdzNJMUhWbjZVblBtekhrcnBoUWdpQkNQM3RNK2xxUEcwbnhxK0VFcjR5OHIwcEUzdlY4VzdqeGZFVElKODZWZlRORHRyZnRTNnNNWi9helo0ZkFCOHJBbTI5Rk9jNUNiTFQxQjhvRkpWS0NIYlpUcGJueXRGL2x6S3JCOVRyK2VGM0c3eUdnZWlPNE9ZbDJLMTc5QnZjMDIvTVZTVUtpdnlHcXQvQTh6TXM3b3ZCUUFBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Date"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Yield_2Yr"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Yield_10Yr"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Yield_30Yr"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"2024-03-01","2":"4.55","3":"4.20","4":"4.35"},{"1":"2024-03-02","2":"4.58","3":"4.25","4":"4.38"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZbTl1WkY5NWFXVnNaSE5mZDJsa1pTQWxQaVVnY0dsMmIzUmZiRzl1WjJWeUtHTnZiSE1nUFNCamIyeHVZVzFsY3loaWIyNWtYM2xwWld4a2MxOTNhV1JsS1ZzeU9teGxibWQwYUNoamIyeHVZVzFsY3loaWIyNWtYM2xwWld4a2MxOTNhV1JsS1NsZExDQnVZVzFsYzE5MGJ5QTlJRndpVFdGMGRYSnBkSGtnVUdWeWFXOWtYQ0lzSUhaaGJIVmxjMTkwYnlBOUlGd2lXV2xsYkdRZ0pWd2lLVnh1WUdCZ0luMD0gLS0+XG5cbmBgYHJcbmJvbmRfeWllbGRzX3dpZGUgJT4lIHBpdm90X2xvbmdlcihjb2xzID0gY29sbmFtZXMoYm9uZF95aWVsZHNfd2lkZSlbMjpsZW5ndGgoY29sbmFtZXMoYm9uZF95aWVsZHNfd2lkZSkpXSwgbmFtZXNfdG8gPSBcIk1hdHVyaXR5IFBlcmlvZFwiLCB2YWx1ZXNfdG8gPSBcIllpZWxkICVcIilcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYm9uZF95aWVsZHNfd2lkZSAlPiUgcGl2b3RfbG9uZ2VyKGNvbHMgPSBjb2xuYW1lcyhib25kX3lpZWxkc193aWRlKVsyOmxlbmd0aChjb2xuYW1lcyhib25kX3lpZWxkc193aWRlKSldLCBuYW1lc190byA9IFwiTWF0dXJpdHkgUGVyaW9kXCIsIHZhbHVlc190byA9IFwiWWllbGQgJVwiKVxuYGBgIn0= -->
+<pre class="r"><code>bond_yields_wide %&gt;% pivot_longer(cols = colnames(bond_yields_wide)[2:length(colnames(bond_yields_wide))], names_to = &quot;Maturity Period&quot;, values_to = &quot;Yield %&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkluUmliRjlrWmlJc0luUmliQ0lzSW1SaGRHRXVabkpoYldVaVhTd2libkp2ZHlJNk5pd2libU52YkNJNk15d2ljM1Z0YldGeWVTSTZleUpCSUhScFltSnNaU0k2V3lJMklNT1hJRE1pWFgxOUxDSnlaR1lpT2lKSU5ITkpRVUZCUVVGQlFVRkNjbFpVZWpKMlEwMUNVaXRpVm5KR2QyNDJRUzgwUTBnM1lXcFZWbk5JYWtSeVRHSlpTWGRPT1VSVGFYSldjVWx5WVZOU2VtUjJLemRvTTFkd1lsWjJjSEJ0UTNsc1drazRMMWhNT1M5TEszWnlkemhFVldVclRUTkpRV2RKUW14RmVVTXlhRWRETDFCT0t6TkNkME5YUzFRNFRYTkxRV2cxZUc5UU1IcFZWRUZIWVhwclFVOVZZeTlHZEhsWVIzUnhTekJvUm1GSFkweDNjSFZQT1ZJeFRXd3hkMUJaVTBaTk5rVnNkRmRQTmtST1RsTmhRMGhLTmtOU2EwZEtWWEpGU1haT1EzSkdUbGRVVTFCS1ptYzJORkJFY1dkWmJ6RnFPRk50T1ZKcWVVdEJhMVZ6SzFwS1duTXpjMWd2ZWxaNE1VaEpaM1JoZERSdmRtOTJiMGxLTUhscFlsSXZVRVp1ZUd0cVZGTldjbkpTVVRSdWRYWXhNbkUzWm1SeWRHNU5aRFZTVkVSV2JtOTVha2R4ZW1adFMwNHdVMWhXWkc0dlFqRjZXV3hCTVc4NVdISTVVSE0zTjB4ck56ZERkRGhtTmtKdlJrNDBabUZIWkVGNWFsVkVRekpNWjFoNGRTc3pkbEpVVW14T2MyVnBVMlJuUVhKaGJXWklPREJMY25sQ2F5OWxUMjVvVURoc1dYaFFLMUZ5ZVRkS1VIQmlkVWxqYlRoc1FqVm1OVUp1WXpOblNTOVRXVzUwZEdzeVZWVXZNRVEyYW1zMVJrbHBhWEp3ZG0weE9XRkdWWFJpVGxRMVYwNTJZVWd5WVhOUVZYbFVka1ZqV2tkVlVUSjVjelpNZVhBd1lrZDRaV0l4ZUV0V2FVcExOR2hUZW1aM1QyZENaVFpqVG1kVlFVRkJQVDBpZlE9PSAtLT5cblxuPGRpdiBkYXRhLXBhZ2VkdGFibGU9XCJmYWxzZVwiPlxuICA8c2NyaXB0IGRhdGEtcGFnZWR0YWJsZS1zb3VyY2UgdHlwZT1cImFwcGxpY2F0aW9uL2pzb25cIj5cbntcImNvbHVtbnNcIjpbe1wibGFiZWxcIjpbXCJEYXRlXCJdLFwibmFtZVwiOlsxXSxcInR5cGVcIjpbXCJjaHJcIl0sXCJhbGlnblwiOltcImxlZnRcIl19LHtcImxhYmVsXCI6W1wiTWF0dXJpdHkgUGVyaW9kXCJdLFwibmFtZVwiOlsyXSxcInR5cGVcIjpbXCJjaHJcIl0sXCJhbGlnblwiOltcImxlZnRcIl19LHtcImxhYmVsXCI6W1wiWWllbGQgJVwiXSxcIm5hbWVcIjpbM10sXCJ0eXBlXCI6W1wiZGJsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX1dLFwiZGF0YVwiOlt7XCIxXCI6XCIyMDI0LTAzLTAxXCIsXCIyXCI6XCJZaWVsZF8yWXJcIixcIjNcIjpcIjQuNTVcIn0se1wiMVwiOlwiMjAyNC0wMy0wMVwiLFwiMlwiOlwiWWllbGRfMTBZclwiLFwiM1wiOlwiNC4yMFwifSx7XCIxXCI6XCIyMDI0LTAzLTAxXCIsXCIyXCI6XCJZaWVsZF8zMFlyXCIsXCIzXCI6XCI0LjM1XCJ9LHtcIjFcIjpcIjIwMjQtMDMtMDJcIixcIjJcIjpcIllpZWxkXzJZclwiLFwiM1wiOlwiNC41OFwifSx7XCIxXCI6XCIyMDI0LTAzLTAyXCIsXCIyXCI6XCJZaWVsZF8xMFlyXCIsXCIzXCI6XCI0LjI1XCJ9LHtcIjFcIjpcIjIwMjQtMDMtMDJcIixcIjJcIjpcIllpZWxkXzMwWXJcIixcIjNcIjpcIjQuMzhcIn1dLFwib3B0aW9uc1wiOntcImNvbHVtbnNcIjp7XCJtaW5cIjp7fSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOlszXX0sXCJyb3dzXCI6e1wibWluXCI6WzEwXSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOls2XX0sXCJwYWdlc1wiOnt9fX1cbiAgPFwvc2NyaXB0PlxuPFwvZGl2PlxuXG48IS0tIHJuYi1mcmFtZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Mywic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IMOXIDMiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCclZUejJ2Q01CUitiVnJGd242QS80Q0g3YWpVVnNIakRyTGJZSXdOOURTaXJWcUlyYVNSemR2KzdoM1dwYlZ2cHBtQ3lsWkk4L1hMOS9LK3ZydzhEVWUrTTNJQWdJQmxFeUMyaEdDL1BOKzNCd0NXS1Q4TXNLQWg1eG9QMHpVVEFHYXprQU9VYy9GdHlYR3RxSzBoRmFHY0x3cHVPOVIxTWwxd1BZU0ZNNkVsdFdPNkROTlNhQ0hKNkNSa0dKVXJFSXZOQ3JGTldUU1BKZmc2NFBEcWdZbzFqOFNtOVJqeUtBa1VzK1pKWnMzc1gvelZ4MUhJZ3RhdDRvdm92b0lKMHlpYlIvUEZueGtqVFNWcnJSUTRudXYxMnE3ZmRydG5NZDVSVERWbm95akdxemZtS04wU1hWZG4vQjF6WWxBMW85WHI5UHM3N0xrNzdDdDhmNkJvRk40ZmFHZEF5alVEQzJMZ1h4dSszdlJUUmxOc2VpU2RnQXJhbWZIODBLcnlCay9lT25oUDhsWXhQK1FyeTdKUHBidUljbThsQjVmNUJuYzNnSS9TWW50dGsyVVUvMEQ2ams1RklpaXJwdm0xOWFGVXRiTlQ1V052YUgyYXNQVXlUdkVjWkdVUTJ5czZMeXAwYkd4ZWIxeEtWaUpLNGhTemZ3T2dCZTZjTmdVQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Date"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Maturity Period"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Yield %"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2024-03-01","2":"Yield_2Yr","3":"4.55"},{"1":"2024-03-01","2":"Yield_10Yr","3":"4.20"},{"1":"2024-03-01","2":"Yield_30Yr","3":"4.35"},{"1":"2024-03-02","2":"Yield_2Yr","3":"4.58"},{"1":"2024-03-02","2":"Yield_10Yr","3":"4.25"},{"1":"2024-03-02","2":"Yield_30Yr","3":"4.38"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVYRzRqSUdsdGNISnZkbVZ0Wlc1MFhHNWliMjVrWDNscFpXeGtjMTlzYjI1blBDMWliMjVrWDNscFpXeGtjMTkzYVdSbElDVStKU0J3YVhadmRGOXNiMjVuWlhJb1kyOXNjeUE5SUMxRVlYUmxMQ0J1WVcxbGMxOTBieUE5SUZ3aVRXRjBkWEpwZEhsZlVHVnlhVzlrWENJc0lIWmhiSFZsYzE5MGJ5QTlJRndpV1dsbGJHUmZVR04wWENJcFhHNWliMjVrWDNscFpXeGtjMTlzYjI1blhHNWdZR0FpZlE9PSAtLT5cblxuYGBgclxuXG4jIGltcHJvdmVtZW50XG5ib25kX3lpZWxkc19sb25nPC1ib25kX3lpZWxkc193aWRlICU+JSBwaXZvdF9sb25nZXIoY29scyA9IC1EYXRlLCBuYW1lc190byA9IFwiTWF0dXJpdHlfUGVyaW9kXCIsIHZhbHVlc190byA9IFwiWWllbGRfUGN0XCIpXG5ib25kX3lpZWxkc19sb25nXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIGltcHJvdmVtZW50XG5ib25kX3lpZWxkc19sb25nPC1ib25kX3lpZWxkc193aWRlICU+JSBwaXZvdF9sb25nZXIoY29scyA9IC1EYXRlLCBuYW1lc190byA9IFwiTWF0dXJpdHlfUGVyaW9kXCIsIHZhbHVlc190byA9IFwiWWllbGRfUGN0XCIpXG5ib25kX3lpZWxkc19sb25nXG5gYGAifQ== -->
+<pre class="r"><code>
+# improvement
+bond_yields_long&lt;-bond_yields_wide %&gt;% pivot_longer(cols = -Date, names_to = &quot;Maturity_Period&quot;, values_to = &quot;Yield_Pct&quot;)
+bond_yields_long</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkluUmliRjlrWmlJc0luUmliQ0lzSW1SaGRHRXVabkpoYldVaVhTd2libkp2ZHlJNk5pd2libU52YkNJNk15d2ljM1Z0YldGeWVTSTZleUpCSUhScFltSnNaU0k2V3lJMklNT1hJRE1pWFgxOUxDSnlaR1lpT2lKSU5ITkpRVUZCUVVGQlFVRkNjbFpVV0ZkMlEwMUNVemxpVm5GSWFGZ3lRV1l5UjNaVGJUQldaazU1UkRkSE1HZFpkMDQ1YTNSb1YweGpVbGN3YzJwdE1qTTNNMGgwWVd4MFdHVnRiVmxNUzFacmFIcGxia3AxTjNWdVRucG1UbmMzUkhScVFuZEJTVmRFV1VKWmEzTkpPWFYyVEZremMwRlpTbTU1ZDNkQlRHMXVTblU0UTJwaVRVRkdaM1JyYnpWUlJGZFlNelZaWTJRMGNtRkhiRWxTZVdadE5qVklXa1JZVTJaQ2EzVnphRXhLYjB4TVlXMWtNRVpYVlZaVlNVeFRWVnB1UldOUGIxRnZSbGxpVG1WSlltTnlhVkpUVEVJeGVFZElkREE1VldKSVozTjBkRTVTZUU5Tk1GWk5lV0ZhTldzeE9ETXZlREUxZWtWRlVYVnViekJCYjNwdmFuVk1TbmQ0YW1KS05YWkdhaXR0VkZoVFZYSkpNa3R2U0dwMVZqWjJOMlp3ZEhRemMxSTBOVE5GTVVoT1Z6Vm1RVzFJUzFVM2IzVjJjV3BNT1c1NlozbHhXamRTTm01WU5TOXFlakV6YWpNeVJqZDNPRlZxWTB3M1FTc3dUVk5NVm0xWlJVVk5MMGQyUkRFNWN5dFpSRlJFZEd0bVUwTmhiV2R1Vkd0MlJIRXdkV0l2VERCeVdVMHpjRmRuVmpnd1R5czRhbm92VmxCeFRFdEVaRmhqYmtKVVlsQkNkMFF2WjI5TVdHSlJUbXh1Um5sUksyczNLMmhWY0VsTGVXVndjR1pYZURsTU1XSm5ORlpVUlU5b2JEUkdTMlIxYzJ0bmVsQlJWbGxIYzJJeWJXazNTa053T0ZsWE9XTmhiR1JETTJsT1RXdDNLM3BrVDJWS056UlBRVlZCUVVFOVBTSjkgLS0+XG5cbjxkaXYgZGF0YS1wYWdlZHRhYmxlPVwiZmFsc2VcIj5cbiAgPHNjcmlwdCBkYXRhLXBhZ2VkdGFibGUtc291cmNlIHR5cGU9XCJhcHBsaWNhdGlvbi9qc29uXCI+XG57XCJjb2x1bW5zXCI6W3tcImxhYmVsXCI6W1wiRGF0ZVwiXSxcIm5hbWVcIjpbMV0sXCJ0eXBlXCI6W1wiY2hyXCJdLFwiYWxpZ25cIjpbXCJsZWZ0XCJdfSx7XCJsYWJlbFwiOltcIk1hdHVyaXR5X1BlcmlvZFwiXSxcIm5hbWVcIjpbMl0sXCJ0eXBlXCI6W1wiY2hyXCJdLFwiYWxpZ25cIjpbXCJsZWZ0XCJdfSx7XCJsYWJlbFwiOltcIllpZWxkX1BjdFwiXSxcIm5hbWVcIjpbM10sXCJ0eXBlXCI6W1wiZGJsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX1dLFwiZGF0YVwiOlt7XCIxXCI6XCIyMDI0LTAzLTAxXCIsXCIyXCI6XCJZaWVsZF8yWXJcIixcIjNcIjpcIjQuNTVcIn0se1wiMVwiOlwiMjAyNC0wMy0wMVwiLFwiMlwiOlwiWWllbGRfMTBZclwiLFwiM1wiOlwiNC4yMFwifSx7XCIxXCI6XCIyMDI0LTAzLTAxXCIsXCIyXCI6XCJZaWVsZF8zMFlyXCIsXCIzXCI6XCI0LjM1XCJ9LHtcIjFcIjpcIjIwMjQtMDMtMDJcIixcIjJcIjpcIllpZWxkXzJZclwiLFwiM1wiOlwiNC41OFwifSx7XCIxXCI6XCIyMDI0LTAzLTAyXCIsXCIyXCI6XCJZaWVsZF8xMFlyXCIsXCIzXCI6XCI0LjI1XCJ9LHtcIjFcIjpcIjIwMjQtMDMtMDJcIixcIjJcIjpcIllpZWxkXzMwWXJcIixcIjNcIjpcIjQuMzhcIn1dLFwib3B0aW9uc1wiOntcImNvbHVtbnNcIjp7XCJtaW5cIjp7fSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOlszXX0sXCJyb3dzXCI6e1wibWluXCI6WzEwXSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOls2XX0sXCJwYWdlc1wiOnt9fX1cbiAgPFwvc2NyaXB0PlxuPFwvZGl2PlxuXG48IS0tIHJuYi1mcmFtZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Mywic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IMOXIDMiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCclZUWFd2Q01CUzliVnFIaFgyQWYyR3ZTbTBWZk55RDdHMGdZd045a3RoV0xjUlcwc2ptMjM3M0h0YWx0WGVtbVlMS1ZraHplbkp1N3VuTnpmTnc3RHRqQndBSVdEWUJZa3NJOXV2TFkzc0FZSm55d3dBTG1uSnU4Q2piTUFGZ3RrbzVRRFdYMzVZY2Q0cmFHbElSeWZtNjVIWkRYU2ZCa3VzaExKb0xMYW1kMEZXVVZVSUxTVVpuRWNPb1FvRlliTmVJYmNyaVJTTEIxeEdIdDA5VWJIZ3N0dE5SeE9NMFZNeWFaNWsxODMveDE1ekVFUXVubzBBb3pvanVMSnd4amJKNXZGaittVFhTVXJJMktvSGp1VjZ2N2ZwdHQzc1I0NTNFMUhOVzVmQW1IS1U3b3V2cWpMOW56Z3lxWjdSNm5YNS9qejEzajMyRjd3OFVqY0w3QSswTVNMVm1ZRUVNL0d2RDE5cytZRFREdGtmU0NhbWduVGt2RHEwdWIvTDByWU0zcFdnVjgwTys4anovVlBxTEtEZFhjbkJUYlBCd0QvZ29MWGJRTmxuRnlRK2s3K2hVcElLeWVwcGZXeDlMMWJnNFZURU9obDRGS2R1c2tnelBRVllHc2IybWk3SkNwOFlXOWNhbGRDM2lOTWt3K3pkT2VKNzRPQVVBQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Date"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Maturity_Period"],"name":[2],"type":["chr"],"align":["left"]},{"label":["Yield_Pct"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"2024-03-01","2":"Yield_2Yr","3":"4.55"},{"1":"2024-03-01","2":"Yield_10Yr","3":"4.20"},{"1":"2024-03-01","2":"Yield_30Yr","3":"4.35"},{"1":"2024-03-02","2":"Yield_2Yr","3":"4.58"},{"1":"2024-03-02","2":"Yield_10Yr","3":"4.25"},{"1":"2024-03-02","2":"Yield_30Yr","3":"4.38"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Time Series Handling</p>
+<p>Why xts is vital for finance:</p>
+<p>Date/Time Indexing: The row names are the timestamps. Elegant
+Subsetting: You can query time ranges using natural strings like
+“2024-01” to get all of January, or “2024-01-01/2024-06-30” to get the
+first half of the year. Alignment: If you merge two xts objects with
+different timestamps (e.g., a stock trading in the US and one in the UK
+with different holidays), xts automatically aligns them chronologically
+and handles the missing days perfectly.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVJeUJNYjJGa0lIUm9aU0J3WVdOcllXZGxJQ2hwYm5OMFlXeHNMbkJoWTJ0aFoyVnpLRndpZUhSelhDSXBJR2xtSUc1bFpXUmxaQ2xjYm14cFluSmhjbmtvZUhSektWeHVYRzRqSURFdUlGSmhkeUJrWVhSaFhHNXdjbWxqWlhNZ1BDMGdZeWd4TlRBc0lERTFNaXdnTVRVeExDQXhOVFVzSURFMU9DbGNibVJoZEdWeklEd3RJR0Z6TGtSaGRHVW9ZeWhjSWpJd01qUXRNRFF0TURGY0lpd2dYQ0l5TURJMExUQTBMVEF5WENJc0lGd2lNakF5TkMwd05DMHdNMXdpTENCY0lqSXdNalF0TURRdE1EUmNJaXdnWENJeU1ESTBMVEEwTFRBMVhDSXBLVnh1WEc0aklESXVJRU55WldGMFpTQjBhR1VnZUhSeklHOWlhbVZqZEZ4dVlXRndiRjkwY3lBOExTQjRkSE1vZUNBOUlIQnlhV05sY3l3Z2IzSmtaWEl1WW5rZ1BTQmtZWFJsY3lsY2JseHVJeUF6TGlCVWFXMWxMV0poYzJWa0lITjFZbk5sZEhScGJtYzZJRWRwZG1VZ2JXVWdaR0YwWVNCbWNtOXRJRUZ3Y21sc0lETnlaQ0J2Ym5kaGNtUnpYRzV3Y21sdWRDaGhZWEJzWDNSelcxd2lNakF5TkMwd05DMHdNeTljSWwwcFhHNWdZR0FpZlE9PSAtLT5cblxuYGBgclxuIyBMb2FkIHRoZSBwYWNrYWdlIChpbnN0YWxsLnBhY2thZ2VzKFwieHRzXCIpIGlmIG5lZWRlZClcbmxpYnJhcnkoeHRzKVxuXG4jIDEuIFJhdyBkYXRhXG5wcmljZXMgPC0gYygxNTAsIDE1MiwgMTUxLCAxNTUsIDE1OClcbmRhdGVzIDwtIGFzLkRhdGUoYyhcIjIwMjQtMDQtMDFcIiwgXCIyMDI0LTA0LTAyXCIsIFwiMjAyNC0wNC0wM1wiLCBcIjIwMjQtMDQtMDRcIiwgXCIyMDI0LTA0LTA1XCIpKVxuXG4jIDIuIENyZWF0ZSB0aGUgeHRzIG9iamVjdFxuYWFwbF90cyA8LSB4dHMoeCA9IHByaWNlcywgb3JkZXIuYnkgPSBkYXRlcylcblxuIyAzLiBUaW1lLWJhc2VkIHN1YnNldHRpbmc6IEdpdmUgbWUgZGF0YSBmcm9tIEFwcmlsIDNyZCBvbndhcmRzXG5wcmludChhYXBsX3RzW1wiMjAyNC0wNC0wMy9cIl0pXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb2FkIHRoZSBwYWNrYWdlIChpbnN0YWxsLnBhY2thZ2VzKFwieHRzXCIpIGlmIG5lZWRlZClcbmxpYnJhcnkoeHRzKVxuXG4jIDEuIFJhdyBkYXRhXG5wcmljZXMgPC0gYygxNTAsIDE1MiwgMTUxLCAxNTUsIDE1OClcbmRhdGVzIDwtIGFzLkRhdGUoYyhcIjIwMjQtMDQtMDFcIiwgXCIyMDI0LTA0LTAyXCIsIFwiMjAyNC0wNC0wM1wiLCBcIjIwMjQtMDQtMDRcIiwgXCIyMDI0LTA0LTA1XCIpKVxuXG4jIDIuIENyZWF0ZSB0aGUgeHRzIG9iamVjdFxuYWFwbF90cyA8LSB4dHMoeCA9IHByaWNlcywgb3JkZXIuYnkgPSBkYXRlcylcblxuIyAzLiBUaW1lLWJhc2VkIHN1YnNldHRpbmc6IEdpdmUgbWUgZGF0YSBmcm9tIEFwcmlsIDNyZCBvbndhcmRzXG5wcmludChhYXBsX3RzW1wiMjAyNC0wNC0wMy9cIl0pXG5gYGAifQ== -->
+<pre class="r"><code># Load the package (install.packages(&quot;xts&quot;) if needed)
+library(xts)
+
+# 1. Raw data
+prices &lt;- c(150, 152, 151, 155, 158)
+dates &lt;- as.Date(c(&quot;2024-04-01&quot;, &quot;2024-04-02&quot;, &quot;2024-04-03&quot;, &quot;2024-04-04&quot;, &quot;2024-04-05&quot;))
+
+# 2. Create the xts object
+aapl_ts &lt;- xts(x = prices, order.by = dates)
+
+# 3. Time-based subsetting: Give me data from April 3rd onwards
+print(aapl_ts[&quot;2024-04-03/&quot;])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBbLDFdXG4yMDI0LTA0LTAzICAxNTFcbjIwMjQtMDQtMDQgIDE1NVxuMjAyNC0wNC0wNSAgMTU4XG4ifQ== -->
+<pre><code>           [,1]
+2024-04-03  151
+2024-04-04  155
+2024-04-05  158</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZblJqWDNCeWFXTmxjeUE4TFNCaktEWTRNREF3TENBMk9UVXdNQ3dnTmpreU1EQXNJRGN4TURBd0xDQTNNRFV3TUN3Z056SXdNREFzSURjeE5UQXdLVnh1WW5SalgyUmhkR1Z6SUR3dElHRnpMa1JoZEdVb1l5aGNJakl3TWpRdE1ETXRNVEZjSWl3Z1hDSXlNREkwTFRBekxURXlYQ0lzSUZ3aU1qQXlOQzB3TXkweE0xd2lMQ0JjYmlBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdYQ0l5TURJMExUQXpMVEUwWENJc0lGd2lNakF5TkMwd015MHhOVndpTENCY0lqSXdNalF0TURNdE1UWmNJaXdnWENJeU1ESTBMVEF6TFRFM1hDSXBLVnh1WUdCZ0luMD0gLS0+XG5cbmBgYHJcbmJ0Y19wcmljZXMgPC0gYyg2ODAwMCwgNjk1MDAsIDY5MjAwLCA3MTAwMCwgNzA1MDAsIDcyMDAwLCA3MTUwMClcbmJ0Y19kYXRlcyA8LSBhcy5EYXRlKGMoXCIyMDI0LTAzLTExXCIsIFwiMjAyNC0wMy0xMlwiLCBcIjIwMjQtMDMtMTNcIiwgXG4gICAgICAgICAgICAgICAgICAgICAgIFwiMjAyNC0wMy0xNFwiLCBcIjIwMjQtMDMtMTVcIiwgXCIyMDI0LTAzLTE2XCIsIFwiMjAyNC0wMy0xN1wiKSlcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYnRjX3ByaWNlcyA8LSBjKDY4MDAwLCA2OTUwMCwgNjkyMDAsIDcxMDAwLCA3MDUwMCwgNzIwMDAsIDcxNTAwKVxuYnRjX2RhdGVzIDwtIGFzLkRhdGUoYyhcIjIwMjQtMDMtMTFcIiwgXCIyMDI0LTAzLTEyXCIsIFwiMjAyNC0wMy0xM1wiLCBcbiAgICAgICAgICAgICAgICAgICAgICAgXCIyMDI0LTAzLTE0XCIsIFwiMjAyNC0wMy0xNVwiLCBcIjIwMjQtMDMtMTZcIiwgXCIyMDI0LTAzLTE3XCIpKVxuYGBgIn0= -->
+<pre class="r"><code>btc_prices &lt;- c(68000, 69500, 69200, 71000, 70500, 72000, 71500)
+btc_dates &lt;- as.Date(c(&quot;2024-03-11&quot;, &quot;2024-03-12&quot;, &quot;2024-03-13&quot;, 
+                       &quot;2024-03-14&quot;, &quot;2024-03-15&quot;, &quot;2024-03-16&quot;, &quot;2024-03-17&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVZblJqWDNSeklEd3RJSGgwY3loNElEMGdZblJqWDNCeWFXTmxjeXdnYjNKa1pYSXVZbmtnUFNCaWRHTmZaR0YwWlhNcFhHNWlkR05mZEhOYlhDSXlNREkwTFRBekxURTJMekl3TWpRdE1ETXRNVGRjSWwxY2JtQmdZQ0o5IC0tPlxuXG5gYGByXG5idGNfdHMgPC0geHRzKHggPSBidGNfcHJpY2VzLCBvcmRlci5ieSA9IGJ0Y19kYXRlcylcbmJ0Y190c1tcIjIwMjQtMDMtMTYvMjAyNC0wMy0xN1wiXVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYnRjX3RzIDwtIHh0cyh4ID0gYnRjX3ByaWNlcywgb3JkZXIuYnkgPSBidGNfZGF0ZXMpXG5idGNfdHNbXCIyMDI0LTAzLTE2LzIwMjQtMDMtMTdcIl1cbmBgYCJ9 -->
+<pre class="r"><code>btc_ts &lt;- xts(x = btc_prices, order.by = btc_dates)
+btc_ts[&quot;2024-03-16/2024-03-17&quot;]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgWywxXVxuMjAyNC0wMy0xNiA3MjAwMFxuMjAyNC0wMy0xNyA3MTUwMFxuIn0= -->
+<pre><code>            [,1]
+2024-03-16 72000
+2024-03-17 71500</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Linear Modelling The lm() function stands for “linear model.” It fits
+a line of best fit through your data using Ordinary Least Squares (OLS)
+regression.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVJeUJOYjJOcklHUmhkR0ZjYm5KbGRIVnlibk5mWkdGMFlTQThMU0JrWVhSaExtWnlZVzFsS0Z4dUlDQlRkRzlqYTE5U1pYUWdQU0JqS0RBdU1ERXlMQ0F0TUM0d01EVXNJREF1TURJeExDQXRNQzR3TVRFc0lEQXVNREE0S1N4Y2JpQWdUV0Z5YTJWMFgxSmxkQ0E5SUdNb01DNHdNVEFzSUMwd0xqQXdPQ3dnTUM0d01UVXNJQzB3TGpBeE5Td2dNQzR3TURVcFhHNHBYRzVjYmlNZ1VuVnVJSFJvWlNCeVpXZHlaWE56YVc5dUlDaFRkRzlqYXlCU1pYUjFjbTV6SUdGeklHRWdablZ1WTNScGIyNGdiMllnVFdGeWEyVjBJRkpsZEhWeWJuTXBYRzVqWVhCdFgyMXZaR1ZzSUR3dElHeHRLRk4wYjJOclgxSmxkQ0IrSUUxaGNtdGxkRjlTWlhRc0lHUmhkR0VnUFNCeVpYUjFjbTV6WDJSaGRHRXBYRzVjYmlNZ1VISnBiblFnZEdobElITjBZWFJwYzNScFkyRnNJSE4xYlcxaGNua2dLR052WldabWFXTnBaVzUwY3l3Z2NDMTJZV3gxWlhNc0lGSXRjM0YxWVhKbFpDbGNibk4xYlcxaGNua29ZMkZ3YlY5dGIyUmxiQ2xjYm1CZ1lDSjkgLS0+XG5cbmBgYHJcbiMgTW9jayBkYXRhXG5yZXR1cm5zX2RhdGEgPC0gZGF0YS5mcmFtZShcbiAgU3RvY2tfUmV0ID0gYygwLjAxMiwgLTAuMDA1LCAwLjAyMSwgLTAuMDExLCAwLjAwOCksXG4gIE1hcmtldF9SZXQgPSBjKDAuMDEwLCAtMC4wMDgsIDAuMDE1LCAtMC4wMTUsIDAuMDA1KVxuKVxuXG4jIFJ1biB0aGUgcmVncmVzc2lvbiAoU3RvY2sgUmV0dXJucyBhcyBhIGZ1bmN0aW9uIG9mIE1hcmtldCBSZXR1cm5zKVxuY2FwbV9tb2RlbCA8LSBsbShTdG9ja19SZXQgfiBNYXJrZXRfUmV0LCBkYXRhID0gcmV0dXJuc19kYXRhKVxuXG4jIFByaW50IHRoZSBzdGF0aXN0aWNhbCBzdW1tYXJ5IChjb2VmZmljaWVudHMsIHAtdmFsdWVzLCBSLXNxdWFyZWQpXG5zdW1tYXJ5KGNhcG1fbW9kZWwpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBNb2NrIGRhdGFcbnJldHVybnNfZGF0YSA8LSBkYXRhLmZyYW1lKFxuICBTdG9ja19SZXQgPSBjKDAuMDEyLCAtMC4wMDUsIDAuMDIxLCAtMC4wMTEsIDAuMDA4KSxcbiAgTWFya2V0X1JldCA9IGMoMC4wMTAsIC0wLjAwOCwgMC4wMTUsIC0wLjAxNSwgMC4wMDUpXG4pXG5cbiMgUnVuIHRoZSByZWdyZXNzaW9uIChTdG9jayBSZXR1cm5zIGFzIGEgZnVuY3Rpb24gb2YgTWFya2V0IFJldHVybnMpXG5jYXBtX21vZGVsIDwtIGxtKFN0b2NrX1JldCB+IE1hcmtldF9SZXQsIGRhdGEgPSByZXR1cm5zX2RhdGEpXG5cbiMgUHJpbnQgdGhlIHN0YXRpc3RpY2FsIHN1bW1hcnkgKGNvZWZmaWNpZW50cywgcC12YWx1ZXMsIFItc3F1YXJlZClcbnN1bW1hcnkoY2FwbV9tb2RlbClcbmBgYCJ9 -->
+<pre class="r"><code># Mock data
+returns_data &lt;- data.frame(
+  Stock_Ret = c(0.012, -0.005, 0.021, -0.011, 0.008),
+  Market_Ret = c(0.010, -0.008, 0.015, -0.015, 0.005)
+)
+
+# Run the regression (Stock Returns as a function of Market Returns)
+capm_model &lt;- lm(Stock_Ret ~ Market_Ret, data = returns_data)
+
+# Print the statistical summary (coefficients, p-values, R-squared)
+summary(capm_model)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IFN0b2NrX1JldCB+IE1hcmtldF9SZXQsIGRhdGEgPSByZXR1cm5zX2RhdGEpXG5cblJlc2lkdWFsczpcbiAgICAgICAgIDEgICAgICAgICAgMiAgICAgICAgICAzICAgICAgICAgIDQgICAgICAgICAgNSBcbi0wLjAwMTgxNjAgLTAuMDAwMzY0MCAgMC4wMDIwNTg1ICAwLjAwMDgxMTggLTAuMDAwNjkwNCBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgMC4wMDM1NjUgICAwLjAwMDc3MiAgIDQuNjE4IDAuMDE5MTE1ICogIFxuTWFya2V0X1JldCAgMS4wMjUxMTEgICAwLjA2ODI5MiAgMTUuMDExIDAuMDAwNjQyICoqKlxuLS0tXG5TaWduaWYuIGNvZGVzOiAgMCDigJgqKirigJkgMC4wMDEg4oCYKirigJkgMC4wMSDigJgq4oCZIDAuMDUg4oCYLuKAmSAwLjEg4oCYIOKAmSAxXG5cblJlc2lkdWFsIHN0YW5kYXJkIGVycm9yOiAwLjAwMTcxMyBvbiAzIGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC45ODY5LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC45ODI1IFxuRi1zdGF0aXN0aWM6IDIyNS4zIG9uIDEgYW5kIDMgREYsICBwLXZhbHVlOiAwLjAwMDY0MTdcbiJ9 -->
+<pre><code>
+Call:
+lm(formula = Stock_Ret ~ Market_Ret, data = returns_data)
+
+Residuals:
+         1          2          3          4          5 
+-0.0018160 -0.0003640  0.0020585  0.0008118 -0.0006904 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 0.003565   0.000772   4.618 0.019115 *  
+Market_Ret  1.025111   0.068292  15.011 0.000642 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.001713 on 3 degrees of freedom
+Multiple R-squared:  0.9869,    Adjusted R-squared:  0.9825 
+F-statistic: 225.3 on 1 and 3 DF,  p-value: 0.0006417</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVjM1Z0YldGeWVTaDJiMnhmYlc5a1pXd3BYRzVjYm1CZ1lDSjkgLS0+XG5cbmBgYHJcbnN1bW1hcnkodm9sX21vZGVsKVxuXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeSh2b2xfbW9kZWwpXG5cbmBgYCJ9 -->
+<pre class="r"><code>summary(vol_model)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IFZvbGF0aWxpdHlfUGN0IH4gVm9sdW1lX01pbGxpb25zLCBkYXRhID0gYWxnb19kYXRhKVxuXG5SZXNpZHVhbHM6XG4gICAgICAgMSAgICAgICAgMiAgICAgICAgMyAgICAgICAgNCAgICAgICAgNSAgICAgICAgNiBcbi0wLjA3NDU0ICAwLjAzNDE4ICAwLjA2MTIzICAwLjAzMDUxIC0wLjAyNjM4IC0wLjAyNDk5IFxuXG5Db2VmZmljaWVudHM6XG4gICAgICAgICAgICAgICAgRXN0aW1hdGUgU3RkLiBFcnJvciB0IHZhbHVlIFByKD58dHwpICAgIFxuKEludGVyY2VwdCkgICAgICAwLjE2NzIxICAgIDAuMDUwMjkgICAzLjMyNSAgIDAuMDI5MiAqICBcblZvbHVtZV9NaWxsaW9ucyAgMC44Mzk0NSAgICAwLjAyMDQ4ICA0MC45OTcgMi4xMmUtMDYgKioqXG4tLS1cblNpZ25pZi4gY29kZXM6ICAwIOKAmCoqKuKAmSAwLjAwMSDigJgqKuKAmSAwLjAxIOKAmCrigJkgMC4wNSDigJgu4oCZIDAuMSDigJgg4oCZIDFcblxuUmVzaWR1YWwgc3RhbmRhcmQgZXJyb3I6IDAuMDU2NCBvbiA0IGRlZ3JlZXMgb2YgZnJlZWRvbVxuTXVsdGlwbGUgUi1zcXVhcmVkOiAgMC45OTc2LFx0QWRqdXN0ZWQgUi1zcXVhcmVkOiAgMC45OTcgXG5GLXN0YXRpc3RpYzogIDE2ODEgb24gMSBhbmQgNCBERiwgIHAtdmFsdWU6IDIuMTE1ZS0wNlxuIn0= -->
+<pre><code>
+Call:
+lm(formula = Volatility_Pct ~ Volume_Millions, data = algo_data)
+
+Residuals:
+       1        2        3        4        5        6 
+-0.07454  0.03418  0.06123  0.03051 -0.02638 -0.02499 
+
+Coefficients:
+                Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      0.16721    0.05029   3.325   0.0292 *  
+Volume_Millions  0.83945    0.02048  40.997 2.12e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.0564 on 4 degrees of freedom
+Multiple R-squared:  0.9976,    Adjusted R-squared:  0.997 
+F-statistic:  1681 on 1 and 4 DF,  p-value: 2.115e-06</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogImFkZGl0aW9uYWxfZnVuY3Rpb25zIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KDQpgYGB7cn0NCg0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogImFkZGl0aW9uYWxfZnVuY3Rpb25zIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCmBgYHtyfQ0KaW5zdGFsbC5wYWNrYWdlcygidGlkeXIiKQ0KaW5zdGFsbC5wYWNrYWdlcygieHRzIikNCmBgYA0KDQp0aWR5cg0KDQpJbiBmaW5hbmNlLCB5b3Ugd2lsbCBvZnRlbiBkb3dubG9hZCBkYXRhIGZyb20gQmxvb21iZXJnIG9yIFlhaG9vIEZpbmFuY2Ugd2hlcmUgZWFjaCBjb2x1bW4gaXMgYSBkaWZmZXJlbnQgYXNzZXQsIGFuZCBlYWNoIHJvdyBpcyBhIGRhdGUuIFRoaXMgaXMgY2FsbGVkIHdpZGUgZGF0YS4NCg0KSG93ZXZlciwgcGFja2FnZXMgbGlrZSBkcGx5ciBhbmQgZ2dwbG90MiBzdHJvbmdseSBwcmVmZXIgbG9uZyBkYXRh4oCUd2hlcmUgZXZlcnkgcm93IGlzIGEgc2luZ2xlIG9ic2VydmF0aW9uLiBUaGUgdGlkeXIgcGFja2FnZSBwcm92aWRlcyB0d28gIGZ1bmN0aW9ucyB0byBmbGlwIHlvdXIgZGF0YSBiYWNrIGFuZCBmb3J0aDogcGl2b3RfbG9uZ2VyKCkgYW5kIHBpdm90X3dpZGVyKCkuDQoNCmBgYHtyfQ0KbGlicmFyeSh0aWR5cikNCmxpYnJhcnkoZHBseXIpDQoNCiMgMS4gVGhlIFdpZGUgRGF0YSAoVHlwaWNhbCBmaW5hbmNlIGRvd25sb2FkIGZvcm1hdCkNCndpZGVfcHJpY2VzIDwtIGRhdGEuZnJhbWUoDQogIERhdGUgPSBjKCIyMDI0LTAxLTAxIiwgIjIwMjQtMDEtMDIiKSwNCiAgQUFQTCA9IGMoMTgwLjUsIDE4MS4yKSwNCiAgTVNGVCA9IGMoMzMwLjEsIDMzMi41KQ0KKQ0Kd2lkZV9wcmljZXMNCiMgMi4gTWFraW5nIGl0IExvbmcNCmxvbmdfcHJpY2VzIDwtIHdpZGVfcHJpY2VzICU+JQ0KICBwaXZvdF9sb25nZXIoDQogICAgY29scyA9IGMoQUFQTCwgTVNGVCksICAgICAgIyBUaGUgY29sdW1ucyB3ZSB3YW50IHRvIG1lbHQgZG93bg0KICAgIG5hbWVzX3RvID0gIlRpY2tlciIsICAgICAgICMgVGhlIG5ldyBjb2x1bW4gbmFtZSBmb3IgdGhlIGNvbHVtbiBoZWFkZXJzDQogICAgdmFsdWVzX3RvID0gIlByaWNlIiAgICAgICAgIyBUaGUgbmV3IGNvbHVtbiBuYW1lIGZvciB0aGUgYWN0dWFsIG51bWJlcnMNCiAgKQ0KDQpsb25nX3ByaWNlcw0KYGBgDQpZb3UgaGF2ZSBkb3dubG9hZGVkIGEgc21hbGwgc2FtcGxlIG9mIGdvdmVybm1lbnQgYm9uZCB5aWVsZHMgYWNyb3NzIGRpZmZlcmVudCBtYXR1cml0aWVzLiBUaGUgZGF0YSBpcyBjdXJyZW50bHkgIndpZGUsIiBhbmQgeW91IG5lZWQgaXQgImxvbmciIHNvIHlvdSBjYW4gZXZlbnR1YWxseSBwbG90IGEgeWllbGQgY3VydmUuDQoNCmBgYHtyfQ0KYm9uZF95aWVsZHNfd2lkZSA8LSBkYXRhLmZyYW1lKA0KICBEYXRlID0gYygiMjAyNC0wMy0wMSIsICIyMDI0LTAzLTAyIiksDQogIFlpZWxkXzJZciA9IGMoNC41NSwgNC41OCksDQogIFlpZWxkXzEwWXIgPSBjKDQuMjAsIDQuMjUpLA0KICBZaWVsZF8zMFlyID0gYyg0LjM1LCA0LjM4KQ0KKQ0KYm9uZF95aWVsZHNfd2lkZQ0KYm9uZF95aWVsZHNfd2lkZSAlPiUgcGl2b3RfbG9uZ2VyKGNvbHMgPSBjb2xuYW1lcyhib25kX3lpZWxkc193aWRlKVsyOmxlbmd0aChjb2xuYW1lcyhib25kX3lpZWxkc193aWRlKSldLCBuYW1lc190byA9ICJNYXR1cml0eSBQZXJpb2QiLCB2YWx1ZXNfdG8gPSAiWWllbGQgJSIpDQoNCiMgaW1wcm92ZW1lbnQNCmJvbmRfeWllbGRzX2xvbmc8LWJvbmRfeWllbGRzX3dpZGUgJT4lIHBpdm90X2xvbmdlcihjb2xzID0gLURhdGUsIG5hbWVzX3RvID0gIk1hdHVyaXR5X1BlcmlvZCIsIHZhbHVlc190byA9ICJZaWVsZF9QY3QiKQ0KYm9uZF95aWVsZHNfbG9uZw0KYGBgDQoNClRpbWUgU2VyaWVzIEhhbmRsaW5nDQoNCldoeSB4dHMgaXMgdml0YWwgZm9yIGZpbmFuY2U6DQoNCkRhdGUvVGltZSBJbmRleGluZzogVGhlIHJvdyBuYW1lcyBhcmUgdGhlIHRpbWVzdGFtcHMuDQpFbGVnYW50IFN1YnNldHRpbmc6IFlvdSBjYW4gcXVlcnkgdGltZSByYW5nZXMgdXNpbmcgbmF0dXJhbCBzdHJpbmdzIGxpa2UgIjIwMjQtMDEiIHRvIGdldCBhbGwgb2YgSmFudWFyeSwgb3IgIjIwMjQtMDEtMDEvMjAyNC0wNi0zMCIgdG8gZ2V0IHRoZSBmaXJzdCBoYWxmIG9mIHRoZSB5ZWFyLg0KQWxpZ25tZW50OiBJZiB5b3UgbWVyZ2UgdHdvIHh0cyBvYmplY3RzIHdpdGggZGlmZmVyZW50IHRpbWVzdGFtcHMgKGUuZy4sIGEgc3RvY2sgdHJhZGluZyBpbiB0aGUgVVMgYW5kIG9uZSBpbiB0aGUgVUsgd2l0aCBkaWZmZXJlbnQgaG9saWRheXMpLCB4dHMgYXV0b21hdGljYWxseSBhbGlnbnMgdGhlbSBjaHJvbm9sb2dpY2FsbHkgYW5kIGhhbmRsZXMgdGhlIG1pc3NpbmcgZGF5cyBwZXJmZWN0bHkuDQoNCmBgYHtyfQ0KIyBMb2FkIHRoZSBwYWNrYWdlIChpbnN0YWxsLnBhY2thZ2VzKCJ4dHMiKSBpZiBuZWVkZWQpDQpsaWJyYXJ5KHh0cykNCg0KIyAxLiBSYXcgZGF0YQ0KcHJpY2VzIDwtIGMoMTUwLCAxNTIsIDE1MSwgMTU1LCAxNTgpDQpkYXRlcyA8LSBhcy5EYXRlKGMoIjIwMjQtMDQtMDEiLCAiMjAyNC0wNC0wMiIsICIyMDI0LTA0LTAzIiwgIjIwMjQtMDQtMDQiLCAiMjAyNC0wNC0wNSIpKQ0KDQojIDIuIENyZWF0ZSB0aGUgeHRzIG9iamVjdA0KYWFwbF90cyA8LSB4dHMoeCA9IHByaWNlcywgb3JkZXIuYnkgPSBkYXRlcykNCg0KIyAzLiBUaW1lLWJhc2VkIHN1YnNldHRpbmc6IEdpdmUgbWUgZGF0YSBmcm9tIEFwcmlsIDNyZCBvbndhcmRzDQpwcmludChhYXBsX3RzWyIyMDI0LTA0LTAzLyJdKQ0KYGBgDQoNCmBgYHtyfQ0KYnRjX3ByaWNlcyA8LSBjKDY4MDAwLCA2OTUwMCwgNjkyMDAsIDcxMDAwLCA3MDUwMCwgNzIwMDAsIDcxNTAwKQ0KYnRjX2RhdGVzIDwtIGFzLkRhdGUoYygiMjAyNC0wMy0xMSIsICIyMDI0LTAzLTEyIiwgIjIwMjQtMDMtMTMiLCANCiAgICAgICAgICAgICAgICAgICAgICAgIjIwMjQtMDMtMTQiLCAiMjAyNC0wMy0xNSIsICIyMDI0LTAzLTE2IiwgIjIwMjQtMDMtMTciKSkNCmBgYA0KDQpgYGB7cn0NCmJ0Y190cyA8LSB4dHMoeCA9IGJ0Y19wcmljZXMsIG9yZGVyLmJ5ID0gYnRjX2RhdGVzKQ0KYnRjX3RzWyIyMDI0LTAzLTE2LzIwMjQtMDMtMTciXQ0KYGBgDQpMaW5lYXIgTW9kZWxsaW5nDQpUaGUgbG0oKSBmdW5jdGlvbiBzdGFuZHMgZm9yICJsaW5lYXIgbW9kZWwuIiBJdCBmaXRzIGEgbGluZSBvZiBiZXN0IGZpdCB0aHJvdWdoIHlvdXIgZGF0YSB1c2luZyBPcmRpbmFyeSBMZWFzdCBTcXVhcmVzIChPTFMpIHJlZ3Jlc3Npb24uDQpgYGB7cn0NCiMgTW9jayBkYXRhDQpyZXR1cm5zX2RhdGEgPC0gZGF0YS5mcmFtZSgNCiAgU3RvY2tfUmV0ID0gYygwLjAxMiwgLTAuMDA1LCAwLjAyMSwgLTAuMDExLCAwLjAwOCksDQogIE1hcmtldF9SZXQgPSBjKDAuMDEwLCAtMC4wMDgsIDAuMDE1LCAtMC4wMTUsIDAuMDA1KQ0KKQ0KDQojIFJ1biB0aGUgcmVncmVzc2lvbiAoU3RvY2sgUmV0dXJucyBhcyBhIGZ1bmN0aW9uIG9mIE1hcmtldCBSZXR1cm5zKQ0KY2FwbV9tb2RlbCA8LSBsbShTdG9ja19SZXQgfiBNYXJrZXRfUmV0LCBkYXRhID0gcmV0dXJuc19kYXRhKQ0KDQojIFByaW50IHRoZSBzdGF0aXN0aWNhbCBzdW1tYXJ5IChjb2VmZmljaWVudHMsIHAtdmFsdWVzLCBSLXNxdWFyZWQpDQpzdW1tYXJ5KGNhcG1fbW9kZWwpDQpgYGANCg0KYGBge3J9DQphbGdvX2RhdGEgPC0gZGF0YS5mcmFtZSgNCiAgVm9sdW1lX01pbGxpb25zID0gYygxLjIsIDIuNSwgMC44LCAzLjEsIDEuNSwgNC4wKSwNCiAgVm9sYXRpbGl0eV9QY3QgPSBjKDEuMSwgMi4zLCAwLjksIDIuOCwgMS40LCAzLjUpDQopDQoNCnZvbF9tb2RlbCA8LSBsbShWb2xhdGlsaXR5X1BjdCB+IFZvbHVtZV9NaWxsaW9ucywgZGF0YSA9IGFsZ29fZGF0YSkNCg0Kc3VtbWFyeSh2b2xfbW9kZWwpDQpgYGANCg0K</div>
 
 
 
