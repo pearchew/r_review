@@ -11,7 +11,7 @@
 
 
 
-<title>basics</title>
+<title>data_wrangling</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1746,139 +1746,134 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">basics</h1>
+<h1 class="title toc-ignore">data_wrangling</h1>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<p>Vectors - In R, there is no such thing as a “scalar” (a single
-number). Even a single number is just a vector of length 1 - We use the
-c() function (which stands for combine or concatenate) to create
-vectors. - R excels at vectorized math, meaning you can perform
-operations on whole vectors without writing for loops.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVJeUJEY21WaGRHbHVaeUJoSUc1MWJXVnlhV01nZG1WamRHOXlJRzltSUhOMGIyTnJJSEJ5YVdObGMxeHVjSEpwWTJWeklEd3RJR01vTVRVd0xqVXNJREUxTWk0d0xDQXhORGt1TlN3Z01UVTFMaklwWEc1Y2JpTWdWbVZqZEc5eWFYcGxaQ0J2Y0dWeVlYUnBiMjV6T2lCRFlXeGpkV3hoZEdsdVp5QnphVzF3YkdVZ2NtVjBkWEp1Y3lCaFoyRnBibk4wSUdFZ1ltRnpaU0J3Y21salpWeHVZbUZ6WlY5d2NtbGpaU0E4TFNBeE5UQXVNRnh1Y21WMGRYSnVjeUE4TFNBb2NISnBZMlZ6SUM4Z1ltRnpaVjl3Y21salpTa2dMU0F4WEc1Y2JpTWdVSEpwYm5ScGJtY2dkR2hsSUhKbGMzVnNkRnh1Y0hKcGJuUW9jbVYwZFhKdWN5bGNibUJnWUNKOSAtLT5cblxuYGBgclxuIyBDcmVhdGluZyBhIG51bWVyaWMgdmVjdG9yIG9mIHN0b2NrIHByaWNlc1xucHJpY2VzIDwtIGMoMTUwLjUsIDE1Mi4wLCAxNDkuNSwgMTU1LjIpXG5cbiMgVmVjdG9yaXplZCBvcGVyYXRpb25zOiBDYWxjdWxhdGluZyBzaW1wbGUgcmV0dXJucyBhZ2FpbnN0IGEgYmFzZSBwcmljZVxuYmFzZV9wcmljZSA8LSAxNTAuMFxucmV0dXJucyA8LSAocHJpY2VzIC8gYmFzZV9wcmljZSkgLSAxXG5cbiMgUHJpbnRpbmcgdGhlIHJlc3VsdFxucHJpbnQocmV0dXJucylcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGluZyBhIG51bWVyaWMgdmVjdG9yIG9mIHN0b2NrIHByaWNlc1xucHJpY2VzIDwtIGMoMTUwLjUsIDE1Mi4wLCAxNDkuNSwgMTU1LjIpXG5cbiMgVmVjdG9yaXplZCBvcGVyYXRpb25zOiBDYWxjdWxhdGluZyBzaW1wbGUgcmV0dXJucyBhZ2FpbnN0IGEgYmFzZSBwcmljZVxuYmFzZV9wcmljZSA8LSAxNTAuMFxucmV0dXJucyA8LSAocHJpY2VzIC8gYmFzZV9wcmljZSkgLSAxXG5cbiMgUHJpbnRpbmcgdGhlIHJlc3VsdFxucHJpbnQocmV0dXJucylcbmBgYCJ9 -->
-<pre class="r"><code># Creating a numeric vector of stock prices
-prices &lt;- c(150.5, 152.0, 149.5, 155.2)
-
-# Vectorized operations: Calculating simple returns against a base price
-base_price &lt;- 150.0
-returns &lt;- (prices / base_price) - 1
-
-# Printing the result
-print(returns)</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVhVzV6ZEdGc2JDNXdZV05yWVdkbGN5aGNJbVJ3YkhseVhDSXBYRzVjYm1CZ1lDSjkgLS0+XG5cbmBgYHJcbmluc3RhbGwucGFja2FnZXMoXCJkcGx5clwiKVxuXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhcImRwbHlyXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>install.packages(&quot;dplyr&quot;)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAwLjAwMzMzMzMzMyAgMC4wMTMzMzMzMzMgLTAuMDAzMzMzMzMzICAwLjAzNDY2NjY2N1xuIn0= -->
-<pre><code>[1]  0.003333333  0.013333333 -0.003333333  0.034666667</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogUnRvb2xzIGlzIHJlcXVpcmVkIHRvIGJ1aWxkIFIgcGFja2FnZXMgYnV0IGlzIG5vdCBjdXJyZW50bHkgaW5zdGFsbGVkLiBQbGVhc2UgZG93bmxvYWQgYW5kIGluc3RhbGwgdGhlIGFwcHJvcHJpYXRlIHZlcnNpb24gb2YgUnRvb2xzIGJlZm9yZSBwcm9jZWVkaW5nOlxuXG5odHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvUnRvb2xzL1xudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC41L3V0ZjhfMS4yLjYuemlwJ1xudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC41L3BrZ2NvbmZpZ18yLjAuMy56aXAnXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi80LjUvd2l0aHJfMy4wLjIuemlwJ1xudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC41L2dlbmVyaWNzXzAuMS40LnppcCdcbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuNS9waWxsYXJfMS4xMS4xLnppcCdcbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzQuNS90aWJibGVfMy4zLjEuemlwJ1xudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC41L3RpZHlzZWxlY3RfMS4yLjEuemlwJ1xudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvNC41L2RwbHlyXzEuMi4wLnppcCdcbiJ9 -->
+<pre><code>WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/utf8_1.2.6.zip&#39;
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/pkgconfig_2.0.3.zip&#39;
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/withr_3.0.2.zip&#39;
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/generics_0.1.4.zip&#39;
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/pillar_1.11.1.zip&#39;
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/tibble_3.3.1.zip&#39;
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/tidyselect_1.2.1.zip&#39;
+trying URL &#39;https://cran.rstudio.com/bin/windows/contrib/4.5/dplyr_1.2.0.zip&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJh1dGY44oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhwa2djb25maWfigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmHdpdGhy4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhnZW5lcmljc+KAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbnBhY2thZ2Ug4oCYcGlsbGFy4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJh0aWJibGXigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmHRpZHlzZWxlY3TigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5wYWNrYWdlIOKAmGRwbHly4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxuXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdEM6XFxVc2Vyc1xcY2h1cGlcXEFwcERhdGFcXExvY2FsXFxUZW1wXFxSdG1wMmh5cTRTXFxkb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
+<pre><code>package ‘utf8’ successfully unpacked and MD5 sums checked
+package ‘pkgconfig’ successfully unpacked and MD5 sums checked
+package ‘withr’ successfully unpacked and MD5 sums checked
+package ‘generics’ successfully unpacked and MD5 sums checked
+package ‘pillar’ successfully unpacked and MD5 sums checked
+package ‘tibble’ successfully unpacked and MD5 sums checked
+package ‘tidyselect’ successfully unpacked and MD5 sums checked
+package ‘dplyr’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\chupi\AppData\Local\Temp\Rtmp2hyq4S\downloaded_packages</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>By default, R fills matrices column by column. If you want it to fill
-row by row, you must specify byrow = TRUE</p>
+<p>Key: pipe (%&gt;% or the newer base R version |&gt; ). - It takes
+whatever is on its left and feeds it into the function on its right.
+This allows you to chain commands together beautifully without nesting
+functions inside each other.</p>
+<ol style="list-style-type: decimal">
+<li><p>select(): Working with Columns Use select() when you want to
+keep, drop, or reorder specific columns in your DataFrame.</p></li>
+<li><p>filter(): Working with Rows Use filter() to subset your data
+based on logical conditions (e.g., “only show me rows where the price is
+greater than 100”).</p></li>
+</ol>
+<ul>
+<li>Note: R uses == for logical equals.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>mutate(): Creating New Data Use mutate() to add brand new columns to
+your DataFrame, usually calculated from existing columns.</li>
+</ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVJeUJEY21WaGRHbHVaeUJoSURKNE1pQnRZWFJ5YVhnZ2IyWWdjRzl5ZEdadmJHbHZJSGRsYVdkb2RITmNibkJ2Y25SbWIyeHBiMTkzWldsbmFIUnpJRHd0SUcxaGRISnBlQ2hqS0RBdU5Dd2dNQzQyTENBd0xqVXNJREF1TlNrc0lHNXliM2NnUFNBeUxDQnVZMjlzSUQwZ01pbGNibkJ2Y25SbWIyeHBiMTkzWldsbmFIUnpYMko1WDNKdmQxOW1hV3hzSUR3dElHMWhkSEpwZUNoaktEQXVOQ3dnTUM0MkxDQXdMalVzSURBdU5Ta3NJRzV5YjNjZ1BTQXlMQ0J1WTI5c0lEMGdNaXdnWW5seWIzY2dQU0JVVWxWRktWeHVYRzRqSUVGemMybG5ibWx1WnlCdVlXMWxjeUIwYnlCeWIzZHpJR0Z1WkNCamIyeDFiVzV6SUdadmNpQmpiR0Z5YVhSNVhHNXliM2R1WVcxbGN5aHdiM0owWm05c2FXOWZkMlZwWjJoMGN5a2dQQzBnWXloY0lrRnpjMlYwSUVGY0lpd2dYQ0pCYzNObGRDQkNYQ0lwWEc1amIyeHVZVzFsY3lod2IzSjBabTlzYVc5ZmQyVnBaMmgwY3lrZ1BDMGdZeWhjSWxCdmNuUm1iMnhwYnlBeFhDSXNJRndpVUc5eWRHWnZiR2x2SURKY0lpbGNibHh1Y0hKcGJuUW9jRzl5ZEdadmJHbHZYM2RsYVdkb2RITXBYRzVnWUdBaWZRPT0gLS0+XG5cbmBgYHJcbiMgQ3JlYXRpbmcgYSAyeDIgbWF0cml4IG9mIHBvcnRmb2xpbyB3ZWlnaHRzXG5wb3J0Zm9saW9fd2VpZ2h0cyA8LSBtYXRyaXgoYygwLjQsIDAuNiwgMC41LCAwLjUpLCBucm93ID0gMiwgbmNvbCA9IDIpXG5wb3J0Zm9saW9fd2VpZ2h0c19ieV9yb3dfZmlsbCA8LSBtYXRyaXgoYygwLjQsIDAuNiwgMC41LCAwLjUpLCBucm93ID0gMiwgbmNvbCA9IDIsIGJ5cm93ID0gVFJVRSlcblxuIyBBc3NpZ25pbmcgbmFtZXMgdG8gcm93cyBhbmQgY29sdW1ucyBmb3IgY2xhcml0eVxucm93bmFtZXMocG9ydGZvbGlvX3dlaWdodHMpIDwtIGMoXCJBc3NldCBBXCIsIFwiQXNzZXQgQlwiKVxuY29sbmFtZXMocG9ydGZvbGlvX3dlaWdodHMpIDwtIGMoXCJQb3J0Zm9saW8gMVwiLCBcIlBvcnRmb2xpbyAyXCIpXG5cbnByaW50KHBvcnRmb2xpb193ZWlnaHRzKVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGluZyBhIDJ4MiBtYXRyaXggb2YgcG9ydGZvbGlvIHdlaWdodHNcbnBvcnRmb2xpb193ZWlnaHRzIDwtIG1hdHJpeChjKDAuNCwgMC42LCAwLjUsIDAuNSksIG5yb3cgPSAyLCBuY29sID0gMilcbnBvcnRmb2xpb193ZWlnaHRzX2J5X3Jvd19maWxsIDwtIG1hdHJpeChjKDAuNCwgMC42LCAwLjUsIDAuNSksIG5yb3cgPSAyLCBuY29sID0gMiwgYnlyb3cgPSBUUlVFKVxuXG4jIEFzc2lnbmluZyBuYW1lcyB0byByb3dzIGFuZCBjb2x1bW5zIGZvciBjbGFyaXR5XG5yb3duYW1lcyhwb3J0Zm9saW9fd2VpZ2h0cykgPC0gYyhcIkFzc2V0IEFcIiwgXCJBc3NldCBCXCIpXG5jb2xuYW1lcyhwb3J0Zm9saW9fd2VpZ2h0cykgPC0gYyhcIlBvcnRmb2xpbyAxXCIsIFwiUG9ydGZvbGlvIDJcIilcblxucHJpbnQocG9ydGZvbGlvX3dlaWdodHMpXG5gYGAifQ== -->
-<pre class="r"><code># Creating a 2x2 matrix of portfolio weights
-portfolio_weights &lt;- matrix(c(0.4, 0.6, 0.5, 0.5), nrow = 2, ncol = 2)
-portfolio_weights_by_row_fill &lt;- matrix(c(0.4, 0.6, 0.5, 0.5), nrow = 2, ncol = 2, byrow = TRUE)
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHViR2xpY21GeWVTaGtjR3g1Y2lsY2JseHVJeUF4TGlCUGRYSWdjbUYzSUVSaGRHRkdjbUZ0WlZ4dWNtRjNYM0J2Y25SbWIyeHBieUE4TFNCa1lYUmhMbVp5WVcxbEtGeHVJQ0JVYVdOclpYSWdQU0JqS0Z3aVFVRlFURndpTENCY0lrZFBUMGRNWENJc0lGd2lWRk5NUVZ3aUxDQmNJazFUUmxSY0lpd2dYQ0pCVFZwT1hDSXBMRnh1SUNCVFpXTjBiM0lnUFNCaktGd2lWR1ZqYUZ3aUxDQmNJbFJsWTJoY0lpd2dYQ0pCZFhSdlhDSXNJRndpVkdWamFGd2lMQ0JjSWtOdmJuTjFiV1Z5WENJcExGeHVJQ0JRY21salpTQTlJR01vTVRnMUxqQXNJREUwTUM0d0xDQXlOVEF1TUN3Z016TTFMakFzSURFek1DNHdLU3hjYmlBZ1UyaGhjbVZ6SUQwZ1l5Z3hNQ3dnTVRVc0lEVXNJREl3TENBMU1DbGNiaWxjYmx4dUl5QXlMaUJVYUdVZ1pIQnNlWElnY0dsd1pXeHBibVZjYm5SbFkyaGZjM1Z0YldGeWVTQThMU0J5WVhkZmNHOXlkR1p2YkdsdklDVStKVnh1SUNCbWFXeDBaWElvVTJWamRHOXlJRDA5SUZ3aVZHVmphRndpS1NBbFBpVWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ0lDQWpJRXRsWlhBZ1QwNU1XU0JVWldOb0lITjBiMk5yYzF4dUlDQnpaV3hsWTNRb1ZHbGphMlZ5TENCUWNtbGpaU3dnVTJoaGNtVnpLU0FsUGlVZ0lDQWdJQ0FnSUNBZ0lDQWdJeUJFY205d0lIUm9aU0JUWldOMGIzSWdZMjlzZFcxdVhHNGdJRzExZEdGMFpTaFFiM05wZEdsdmJsOVdZV3gxWlNBOUlGQnlhV05sSUNvZ1UyaGhjbVZ6S1NBZ0lDQWdJQ0FqSUVOaGJHTjFiR0YwWlNCMGIzUmhiQ0FrSUhaaGJIVmxYRzVjYm5CeWFXNTBLSFJsWTJoZmMzVnRiV0Z5ZVNsY2JtQmdZQ0o5IC0tPlxuXG5gYGByXG5saWJyYXJ5KGRwbHlyKVxuXG4jIDEuIE91ciByYXcgRGF0YUZyYW1lXG5yYXdfcG9ydGZvbGlvIDwtIGRhdGEuZnJhbWUoXG4gIFRpY2tlciA9IGMoXCJBQVBMXCIsIFwiR09PR0xcIiwgXCJUU0xBXCIsIFwiTVNGVFwiLCBcIkFNWk5cIiksXG4gIFNlY3RvciA9IGMoXCJUZWNoXCIsIFwiVGVjaFwiLCBcIkF1dG9cIiwgXCJUZWNoXCIsIFwiQ29uc3VtZXJcIiksXG4gIFByaWNlID0gYygxODUuMCwgMTQwLjAsIDI1MC4wLCAzMzUuMCwgMTMwLjApLFxuICBTaGFyZXMgPSBjKDEwLCAxNSwgNSwgMjAsIDUwKVxuKVxuXG4jIDIuIFRoZSBkcGx5ciBwaXBlbGluZVxudGVjaF9zdW1tYXJ5IDwtIHJhd19wb3J0Zm9saW8gJT4lXG4gIGZpbHRlcihTZWN0b3IgPT0gXCJUZWNoXCIpICU+JSAgICAgICAgICAgICAgICAgICMgS2VlcCBPTkxZIFRlY2ggc3RvY2tzXG4gIHNlbGVjdChUaWNrZXIsIFByaWNlLCBTaGFyZXMpICU+JSAgICAgICAgICAgICAjIERyb3AgdGhlIFNlY3RvciBjb2x1bW5cbiAgbXV0YXRlKFBvc2l0aW9uX1ZhbHVlID0gUHJpY2UgKiBTaGFyZXMpICAgICAgICMgQ2FsY3VsYXRlIHRvdGFsICQgdmFsdWVcblxucHJpbnQodGVjaF9zdW1tYXJ5KVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShkcGx5cilcblxuIyAxLiBPdXIgcmF3IERhdGFGcmFtZVxucmF3X3BvcnRmb2xpbyA8LSBkYXRhLmZyYW1lKFxuICBUaWNrZXIgPSBjKFwiQUFQTFwiLCBcIkdPT0dMXCIsIFwiVFNMQVwiLCBcIk1TRlRcIiwgXCJBTVpOXCIpLFxuICBTZWN0b3IgPSBjKFwiVGVjaFwiLCBcIlRlY2hcIiwgXCJBdXRvXCIsIFwiVGVjaFwiLCBcIkNvbnN1bWVyXCIpLFxuICBQcmljZSA9IGMoMTg1LjAsIDE0MC4wLCAyNTAuMCwgMzM1LjAsIDEzMC4wKSxcbiAgU2hhcmVzID0gYygxMCwgMTUsIDUsIDIwLCA1MClcbilcblxuIyAyLiBUaGUgZHBseXIgcGlwZWxpbmVcbnRlY2hfc3VtbWFyeSA8LSByYXdfcG9ydGZvbGlvICU+JVxuICBmaWx0ZXIoU2VjdG9yID09IFwiVGVjaFwiKSAlPiUgICAgICAgICAgICAgICAgICAjIEtlZXAgT05MWSBUZWNoIHN0b2Nrc1xuICBzZWxlY3QoVGlja2VyLCBQcmljZSwgU2hhcmVzKSAlPiUgICAgICAgICAgICAgIyBEcm9wIHRoZSBTZWN0b3IgY29sdW1uXG4gIG11dGF0ZShQb3NpdGlvbl9WYWx1ZSA9IFByaWNlICogU2hhcmVzKSAgICAgICAjIENhbGN1bGF0ZSB0b3RhbCAkIHZhbHVlXG5cbnByaW50KHRlY2hfc3VtbWFyeSlcbmBgYCJ9 -->
+<pre class="r"><code>library(dplyr)
 
-# Assigning names to rows and columns for clarity
-rownames(portfolio_weights) &lt;- c(&quot;Asset A&quot;, &quot;Asset B&quot;)
-colnames(portfolio_weights) &lt;- c(&quot;Portfolio 1&quot;, &quot;Portfolio 2&quot;)
+# 1. Our raw DataFrame
+raw_portfolio &lt;- data.frame(
+  Ticker = c(&quot;AAPL&quot;, &quot;GOOGL&quot;, &quot;TSLA&quot;, &quot;MSFT&quot;, &quot;AMZN&quot;),
+  Sector = c(&quot;Tech&quot;, &quot;Tech&quot;, &quot;Auto&quot;, &quot;Tech&quot;, &quot;Consumer&quot;),
+  Price = c(185.0, 140.0, 250.0, 335.0, 130.0),
+  Shares = c(10, 15, 5, 20, 50)
+)
 
-print(portfolio_weights)</code></pre>
+# 2. The dplyr pipeline
+tech_summary &lt;- raw_portfolio %&gt;%
+  filter(Sector == &quot;Tech&quot;) %&gt;%                  # Keep ONLY Tech stocks
+  select(Ticker, Price, Shares) %&gt;%             # Drop the Sector column
+  mutate(Position_Value = Price * Shares)       # Calculate total $ value
+
+print(tech_summary)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICBQb3J0Zm9saW8gMSBQb3J0Zm9saW8gMlxuQXNzZXQgQSAgICAgICAgIDAuNCAgICAgICAgIDAuNVxuQXNzZXQgQiAgICAgICAgIDAuNiAgICAgICAgIDAuNVxuIn0= -->
-<pre><code>        Portfolio 1 Portfolio 2
-Asset A         0.4         0.5
-Asset B         0.6         0.5</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVjSEpwYm5Rb2NHOXlkR1p2YkdsdlgzZGxhV2RvZEhOZllubGZjbTkzWDJacGJHd3BYRzVnWUdBaWZRPT0gLS0+XG5cbmBgYHJcbnByaW50KHBvcnRmb2xpb193ZWlnaHRzX2J5X3Jvd19maWxsKVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQocG9ydGZvbGlvX3dlaWdodHNfYnlfcm93X2ZpbGwpXG5gYGAifQ== -->
-<pre class="r"><code>print(portfolio_weights_by_row_fill)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICBbLDFdIFssMl1cblsxLF0gIDAuNCAgMC42XG5bMixdICAwLjUgIDAuNVxuIn0= -->
-<pre><code>     [,1] [,2]
-[1,]  0.4  0.6
-[2,]  0.5  0.5</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICBUaWNrZXIgUHJpY2UgU2hhcmVzIFBvc2l0aW9uX1ZhbHVlXG4xICAgQUFQTCAgIDE4NSAgICAgMTAgICAgICAgICAgIDE4NTBcbjIgIEdPT0dMICAgMTQwICAgICAxNSAgICAgICAgICAgMjEwMFxuMyAgIE1TRlQgICAzMzUgICAgIDIwICAgICAgICAgICA2NzAwXG4ifQ== -->
+<pre><code>  Ticker Price Shares Position_Value
+1   AAPL   185     10           1850
+2  GOOGL   140     15           2100
+3   MSFT   335     20           6700</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>DataFrames are the equivalent of a spreadsheet or a SQL table. -
-Unlike a matrix, each column in a DataFrame can be a different data type
-(e.g., numeric prices in one column, character tickers in another).</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkltUmhkR0V1Wm5KaGJXVWlYU3dpYm5KdmR5STZNeXdpYm1OdmJDSTZNeXdpYzNWdGJXRnllU0k2VzExOUxDSnlaR1lpT2lKSU5ITkpRVUZCUVVGQlFVRkNjbFpVVlZVdlEwMUNRU3N4YkZWRWFXTmhSWFlyUTNKRGVtaE9aVXBTUlRSVlZVUm5Xa2gzVjJ0dldta3lWV3BZV1c0Mk5XZ3ZXREpWTWs5c1FYRktSRGR4YXpJelpUTTNLellyWm1VeFJ6azVUM2ROVnpCQlFVRkhaa1ZwUkZWUlMwTlVjVWhtVmtGbVFUbEZPVlJCYURkd05XNXBhVkppTmxGSE9FcHZWa2hYUkRkeVIweG1ja0YxWWtoVFdEaFhVMmxFZW5GeWN6azNTVnBvUXl0V2F5OUxiRmRIYUc1TVJUTmFVM1ZTWW05dk9VcDVWMXBEV1d4WVNsRkxlbVl4YjJkd2F6QnRZMGQyUWpWU1EwMWtjVzlSVEZNMlRHNVRjSHBRY0VaMWFtdHVhVFV4WldkV0wzbExja1ZSYlN0SVFYVjFUVGx6S3pSdGNWUTRaamx4U1RBeGNrdHJSbmwwZW5RNFVraEtMMDFQYUdvMFJDdE9aVFZHUkhCMU1VOUxOMnBrUWxSbGREUkNjVVJOUjNkR1ltSmtNMDVLYnpoSVRWZzNXRFJWTVhSVVdVTmlSakJNTTFGUVJVcGpkbmhCVHpBNGJtcFFUbWR2VlhGaVpHbHVNVEZZTWtWMVExcExPRE16TTNNeWRFdEpiMUJoT0hWSk9WSmxXVWhLZVZoRVpUUjFRVk01Y2pCM04wdEtjWE5yTTFWSU1tbHJjREZ3Y0c1alNDOVBhamxrSzFCTGRHWkNNR3hQWlhsak1IRjZXRVZtYWtSUFNUWmFja1pzVlU4dmNsTXpPWGhzWmxwWGFXUmFiWFZRTUV3eVIySTBLM1ZGUWtGQlFTSjkgLS0+XG5cbjxkaXYgZGF0YS1wYWdlZHRhYmxlPVwiZmFsc2VcIj5cbiAgPHNjcmlwdCBkYXRhLXBhZ2VkdGFibGUtc291cmNlIHR5cGU9XCJhcHBsaWNhdGlvbi9qc29uXCI+XG57XCJjb2x1bW5zXCI6W3tcImxhYmVsXCI6W1wiVGlja2VyXCJdLFwibmFtZVwiOlsxXSxcInR5cGVcIjpbXCJjaHJcIl0sXCJhbGlnblwiOltcImxlZnRcIl19LHtcImxhYmVsXCI6W1wiUHJpY2VcIl0sXCJuYW1lXCI6WzJdLFwidHlwZVwiOltcImRibFwiXSxcImFsaWduXCI6W1wicmlnaHRcIl19LHtcImxhYmVsXCI6W1wiVGVjaFNlY3RvclwiXSxcIm5hbWVcIjpbM10sXCJ0eXBlXCI6W1wibGdsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX1dLFwiZGF0YVwiOlt7XCIxXCI6XCJBQVBMXCIsXCIyXCI6XCIxODAuNVwiLFwiM1wiOlwiVFJVRVwifSx7XCIxXCI6XCJHT09HTFwiLFwiMlwiOlwiMTQwLjJcIixcIjNcIjpcIlRSVUVcIn0se1wiMVwiOlwiTVNGVFwiLFwiMlwiOlwiMzMwLjFcIixcIjNcIjpcIlRSVUVcIn1dLFwib3B0aW9uc1wiOntcImNvbHVtbnNcIjp7XCJtaW5cIjp7fSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOlszXX0sXCJyb3dzXCI6e1wibWluXCI6WzEwXSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOlszXX0sXCJwYWdlc1wiOnt9fX1cbiAgPFwvc2NyaXB0PlxuPFwvZGl2PlxuXG48IS0tIHJuYi1mcmFtZS1lbmQgLS0+XG4ifQ== -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6Mywic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCclZUVVUvQ01CQSsxbFVEaWNhRXYrQ3JDemhOZUpSRTRVVURnWkh3V2tvWmkyVWpYWW42NWgvWDJVMk9sQXFKRDdxazIzZTM3KzYrZmUxRzk5T3dNVzBBQUFHZkVpRFVRS0NUcUhmVkFmQTlFOVRBaDdwNW5paVJiNlFHOEpvVkhXRDdyR0xmckF1YkhTWDhXU2lEenFyczk3SVpoQytWay9LbFdHaG5MRTNaU3VSYm9vOUp5V1pDWWxYSlFLemYxb2dwazBtY0d2QjVSQ01kcW9RTFM2TG5TcHpQcEZ1amtuaTUxZWdWL3lLckVRbStIQXV1TTlzKzRtcVQ4ZjlxSTAxcktrRnl0enQ4UkhKL01PaGo0RCtOZTVGRHB1MU9LN2pkQlRldDRCcURNR3dGYmJkM05KbzhITVg3WDRVMXRUWUNiRjBMM1FQRUpjdnhBTzA4bmpQTmdvVXFiZGluMTFYMkV1Q1pLODMzM3MydEtJb1BhOHVJOVJlWUhKeVhEZTR1QVM5cjB3N0tKcXNrM1VIMmlrcDFwcG5jSC9PajlkK1BLdGZCMGxPZXljMHF6WEVmakRPSTZackZsVU8vclMzOXhsZlpXaWRabXVQMEwyR2I0K3VFQkFBQSJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabmhmWkdGMFlTQThMU0JrWVhSaExtWnlZVzFsS0Z4dUlDQlFZV2x5SUQwZ1l5aGNJa1ZWVWk5VlUwUmNJaXdnWENKSFFsQXZWVk5FWENJc0lGd2lTbEJaTDFWVFJGd2lMQ0JjSWtWVlVpOVZVMFJjSWl3Z1hDSkhRbEF2VlZORVhDSXNJRndpU2xCWkwxVlRSRndpS1N4Y2JpQWdSR0Y1SUQwZ1l5Z3hMQ0F4TENBeExDQXlMQ0F5TENBeUtTeGNiaUFnVDNCbGJsOVNZWFJsSUQwZ1l5Z3hMakE0TENBeExqSTJMQ0F3TGpBd05qZ3NJREV1TURrc0lERXVNalVzSURBdU1EQTJPU2tzWEc0Z0lFTnNiM05sWDFKaGRHVWdQU0JqS0RFdU1Ea3NJREV1TWpjc0lEQXVNREEyTnl3Z01TNHdPQ3dnTVM0eU5pd2dNQzR3TURjd0tTeGNiaUFnVm05c2RXMWxJRDBnWXlneE1EQXdMQ0E0TlRBc0lERXlNREFzSURFeE1EQXNJRGt3TUN3Z01UTXdNQ2xjYmlsY2JtQmdZQ0o5IC0tPlxuXG5gYGByXG5meF9kYXRhIDwtIGRhdGEuZnJhbWUoXG4gIFBhaXIgPSBjKFwiRVVSL1VTRFwiLCBcIkdCUC9VU0RcIiwgXCJKUFkvVVNEXCIsIFwiRVVSL1VTRFwiLCBcIkdCUC9VU0RcIiwgXCJKUFkvVVNEXCIpLFxuICBEYXkgPSBjKDEsIDEsIDEsIDIsIDIsIDIpLFxuICBPcGVuX1JhdGUgPSBjKDEuMDgsIDEuMjYsIDAuMDA2OCwgMS4wOSwgMS4yNSwgMC4wMDY5KSxcbiAgQ2xvc2VfUmF0ZSA9IGMoMS4wOSwgMS4yNywgMC4wMDY3LCAxLjA4LCAxLjI2LCAwLjAwNzApLFxuICBWb2x1bWUgPSBjKDEwMDAsIDg1MCwgMTIwMCwgMTEwMCwgOTAwLCAxMzAwKVxuKVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZnhfZGF0YSA8LSBkYXRhLmZyYW1lKFxuICBQYWlyID0gYyhcIkVVUi9VU0RcIiwgXCJHQlAvVVNEXCIsIFwiSlBZL1VTRFwiLCBcIkVVUi9VU0RcIiwgXCJHQlAvVVNEXCIsIFwiSlBZL1VTRFwiKSxcbiAgRGF5ID0gYygxLCAxLCAxLCAyLCAyLCAyKSxcbiAgT3Blbl9SYXRlID0gYygxLjA4LCAxLjI2LCAwLjAwNjgsIDEuMDksIDEuMjUsIDAuMDA2OSksXG4gIENsb3NlX1JhdGUgPSBjKDEuMDksIDEuMjcsIDAuMDA2NywgMS4wOCwgMS4yNiwgMC4wMDcwKSxcbiAgVm9sdW1lID0gYygxMDAwLCA4NTAsIDEyMDAsIDExMDAsIDkwMCwgMTMwMClcbilcbmBgYCJ9 -->
+<pre class="r"><code>fx_data &lt;- data.frame(
+  Pair = c(&quot;EUR/USD&quot;, &quot;GBP/USD&quot;, &quot;JPY/USD&quot;, &quot;EUR/USD&quot;, &quot;GBP/USD&quot;, &quot;JPY/USD&quot;),
+  Day = c(1, 1, 1, 2, 2, 2),
+  Open_Rate = c(1.08, 1.26, 0.0068, 1.09, 1.25, 0.0069),
+  Close_Rate = c(1.09, 1.27, 0.0067, 1.08, 1.26, 0.0070),
+  Volume = c(1000, 850, 1200, 1100, 900, 1300)
+)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Your Tasks: Using dplyr and the pipe (%&gt;%):</p>
+<p>Filter the fx_data to only show trades that happened on Day 1.</p>
+<p>Select only the Pair, Open_Rate, and Close_Rate columns (drop Day and
+Volume).</p>
+<p>Mutate a new column called Daily_Change which is calculated as
+Close_Rate - Open_Rate.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkltUmhkR0V1Wm5KaGJXVWlYU3dpYm5KdmR5STZNeXdpYm1OdmJDSTZOQ3dpYzNWdGJXRnllU0k2ZXlKRVpYTmpjbWx3ZEdsdmJpSTZXeUprWmlCYk15RERseUEwWFNKZGZYMHNJbkprWmlJNklrZzBjMGxCUVVGQlFVRkJRVUp6TVZRek1DOURUVUpCS3pGb1ZVTlZWMUJwZGl0QmNtTXZkMGswU25OU01VMVJXRU5WY1VOVU5sUkJSMFYyUzFKeVdWTTFZekV2V0Vkak0yUTVRbFpUU1hsS2FWVjFNblVyT1RaWUt5OWlkRlJtYjJwU2NWWlZVVlZCUTBwcFZVRkxTRk5DVkhBNGRYRXhNa0ZGZUVSblowdFpWVXBoTWtkRWNsSnRaM05CTkhsNFRrSXdhWE50VjBad05GWlVTazUyZGsxRE5sVTVWRzFPWm5JM2NFOXdiM1JSY0ROQ2JreHlVMmt4UjJSTVNqaHZVMVJSZUhsT2JrVTBjM0JKVFRsTlZtMW9WRFZzTTBoT09UWllkMk5WUm1nclYwUnVLMlZOUTBWdk9HY3daRXB0ZWtOa1pFTk9VRlJqVW1GaVZHbFFPVVZYY1ZoTVp6aHFVblJhUmk5dlpUSnZlSHA1SzBkWVkxaDZTR1JXWkZoeVpXNDJjMnB4YW5GVFNscFNkV2h2VDB3MFYwMVFOR1F4TVZnMFdETXZaV05WTld0dVJtMXRWak5pU0hWSU5uRXdaSE5wTTJKaWJsZ3lUVU0xZW1wTVlrZGhSM05OVjI1UGNXUnVNR1pMUmxsVU1VUjZVV3hyU1U1SVkzZDJUazVDY0RaelRYazFVM3BEV1dSdVpYQlNhMVI2U25GSVUxVlFlalpsVlhkbFRFWjNkbkJLYWs1T04ydEtORGRxWkN0WU5HbFVUSFpOWjFsdWVWRmFXRFUwUTFCamRuYzFMMlpxWmxwUGJqVlhOV1U1YjJ4SlVrTk5ZbnBhWWpWMFptRm5WU3RZVjNBMVRqRk1URlV3Ukhac056WkZWalExTWxKdU1EWlpjVFZoV1dRcmVXc3pObXBWZGtKVGJtbENTREpJTVZRdmJWWnBjRXAxUWxGQlFTSjkgLS0+XG5cbjxkaXYgZGF0YS1wYWdlZHRhYmxlPVwiZmFsc2VcIj5cbiAgPHNjcmlwdCBkYXRhLXBhZ2VkdGFibGUtc291cmNlIHR5cGU9XCJhcHBsaWNhdGlvbi9qc29uXCI+XG57XCJjb2x1bW5zXCI6W3tcImxhYmVsXCI6W1wiUGFpclwiXSxcIm5hbWVcIjpbMV0sXCJ0eXBlXCI6W1wiY2hyXCJdLFwiYWxpZ25cIjpbXCJsZWZ0XCJdfSx7XCJsYWJlbFwiOltcIk9wZW5fUmF0ZVwiXSxcIm5hbWVcIjpbMl0sXCJ0eXBlXCI6W1wiZGJsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX0se1wibGFiZWxcIjpbXCJDbG9zZV9SYXRlXCJdLFwibmFtZVwiOlszXSxcInR5cGVcIjpbXCJkYmxcIl0sXCJhbGlnblwiOltcInJpZ2h0XCJdfSx7XCJsYWJlbFwiOltcIkRhaWx5X0NoYW5nZVwiXSxcIm5hbWVcIjpbNF0sXCJ0eXBlXCI6W1wiZGJsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX1dLFwiZGF0YVwiOlt7XCIxXCI6XCJFVVIvVVNEXCIsXCIyXCI6XCIxLjA4MDBcIixcIjNcIjpcIjEuMDkwMFwiLFwiNFwiOlwiMWUtMDJcIn0se1wiMVwiOlwiR0JQL1VTRFwiLFwiMlwiOlwiMS4yNjAwXCIsXCIzXCI6XCIxLjI3MDBcIixcIjRcIjpcIjFlLTAyXCJ9LHtcIjFcIjpcIkpQWS9VU0RcIixcIjJcIjpcIjAuMDA2OFwiLFwiM1wiOlwiMC4wMDY3XCIsXCI0XCI6XCItMWUtMDRcIn1dLFwib3B0aW9uc1wiOntcImNvbHVtbnNcIjp7XCJtaW5cIjp7fSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOls0XX0sXCJyb3dzXCI6e1wibWluXCI6WzEwXSxcIm1heFwiOlsxMF0sXCJ0b3RhbFwiOlszXX0sXCJwYWdlc1wiOnt9fX1cbiAgPFwvc2NyaXB0PlxuPFwvZGl2PlxuXG48IS0tIHJuYi1mcmFtZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6NCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMyDDlyA0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJzMVQzMC9DTUJBKzFoVUNVV1BpditBcmMvd0k0SnNSMU1RWENVcUNUNlRBR0V2S1JyWVM1YzEvWEdjM2Q5QlZTSXlKaVV1MnUrOTZYKy9idFRmb2pScVZVUVVBQ0ppVUFLSFNCVHA4dXExMkFFeERnZ0tZVUphMkdEclJtZ3NBNHl4TkIwaXNtV0ZwNFZUSk52dk1DNlU5VG1OZnI3cE9wb3RRcDNCbkxyU2kxR2RMSjhvU1RReHlObkU0c3BJTTlNVm1oVDVsM0hOOTZYd2NVRmgrV0RuK2VNQ0VvOGcwZEptekNkZENOUFRjUmFiVGlQOUVXcVhMZzhqUnRaRi9vZTJveHp5K0dYY1h6SGRWZFhyZW42c2pxanFTSlpSdWhvT0w0V01QNGQxMVg0WDMvZWNVNWtuRm1tVjNiSHVINnEwZHNpM2JiblgyTUM1empMYkdhR3NNV25PcWRuMGZLRllUMUR6UWxrSU5IY3d2Tk5CcDZzTXk1U3pDWWRuZXBSa1R6SnFIU1VQejZlVXdlTEZ3dnBKak5ON2tKNDdqZCtYNGlUTHZNZ1lueVFaWDU0Q1Bjdnc1L2ZqZlpPbjVXNWU5b2xJUkNNYnpaYjV0ZmFnVStYV3A1TjFMTFUwRHZsNzZFVjQ1MlJuMDZZcTVhWWQreWszNmpVdkJTbmlCSDJIMVQvbVZpcEp1QlFBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Ticker"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Price"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["TechSector"],"name":[3],"type":["lgl"],"align":["right"]}],"data":[{"1":"AAPL","2":"180.5","3":"TRUE"},{"1":"GOOGL","2":"140.2","3":"TRUE"},{"1":"MSFT","2":"330.1","3":"TRUE"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+{"columns":[{"label":["Pair"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Open_Rate"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Close_Rate"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Daily_Change"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"EUR/USD","2":"1.0800","3":"1.0900","4":"1e-02"},{"1":"GBP/USD","2":"1.2600","3":"1.2700","4":"1e-02"},{"1":"JPY/USD","2":"0.0068","3":"0.0067","4":"-1e-04"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Additional context &lt;- is for Environment Assignment: You use the
-arrow when you are creating a brand new object (like a variable, vector,
-or dataframe) and saving it into your workspace/memory.</p>
-<p>= is for Argument Assignment: You use the equals sign inside the
-parentheses of a function to pass values to specific arguments or to
-name things within that function.</p>
-<p>Task</p>
-<p>Your Tasks: Vectors: Create two numeric vectors. - stock_a with
-prices: 100, 102, 101 - stock_b with prices: 50, 55, 53</p>
-<p>Matrix: Combine these two vectors into a single 3x2 matrix
-representing your price data. (Hint: You can use the matrix() function
-we discussed, or look up a handy R function called cbind() which binds
-columns together).</p>
-<p>DataFrame: Create a DataFrame that includes three columns: - Day: A
-vector containing the days 1, 2, and 3. - Stock_A: Your first price
-vector. - Stock_B: Your second price vector.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVjM1J2WTJ0ZllTQThMU0JqS0RFd01Dd3hNRElzTVRBeEtWeHVjM1J2WTJ0ZllpQThMU0JqS0RVd0xEVTFMRFV6S1Z4dWJXRjBjbWw0WDNabGNpQThMU0J0WVhSeWFYZ29ZeWh6ZEc5amExOWhMSE4wYjJOclgySXBMQ0J1Y205M0lEMGdNeXdnYm1OdmJDQTlJRElwWEc1alltbHVaRjl0WVhSeWFYaGZkbVZ5SUR3dElHTmlhVzVrS0hOMGIyTnJYMkVzSUhOMGIyTnJYMklwWEc1eWIzZHVZVzFsY3lodFlYUnlhWGhmZG1WeUtTQThMU0JqS0RFc01pd3pLVnh1WTI5c2JtRnRaWE1vYldGMGNtbDRYM1psY2lrZ1BDMWpLRndpVTNSdlkydGZRVndpTEZ3aVUzUnZZMnRmUWx3aUtWeHVYRzV0WVhSeWFYaGZkbVZ5WEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5zdG9ja19hIDwtIGMoMTAwLDEwMiwxMDEpXG5zdG9ja19iIDwtIGMoNTAsNTUsNTMpXG5tYXRyaXhfdmVyIDwtIG1hdHJpeChjKHN0b2NrX2Esc3RvY2tfYiksIG5yb3cgPSAzLCBuY29sID0gMilcbmNiaW5kX21hdHJpeF92ZXIgPC0gY2JpbmQoc3RvY2tfYSwgc3RvY2tfYilcbnJvd25hbWVzKG1hdHJpeF92ZXIpIDwtIGMoMSwyLDMpXG5jb2xuYW1lcyhtYXRyaXhfdmVyKSA8LWMoXCJTdG9ja19BXCIsXCJTdG9ja19CXCIpXG5cbm1hdHJpeF92ZXJcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3RvY2tfYSA8LSBjKDEwMCwxMDIsMTAxKVxuc3RvY2tfYiA8LSBjKDUwLDU1LDUzKVxubWF0cml4X3ZlciA8LSBtYXRyaXgoYyhzdG9ja19hLHN0b2NrX2IpLCBucm93ID0gMywgbmNvbCA9IDIpXG5jYmluZF9tYXRyaXhfdmVyIDwtIGNiaW5kKHN0b2NrX2EsIHN0b2NrX2IpXG5yb3duYW1lcyhtYXRyaXhfdmVyKSA8LSBjKDEsMiwzKVxuY29sbmFtZXMobWF0cml4X3ZlcikgPC1jKFwiU3RvY2tfQVwiLFwiU3RvY2tfQlwiKVxuXG5tYXRyaXhfdmVyXG5gYGAifQ== -->
-<pre class="r"><code>stock_a &lt;- c(100,102,101)
-stock_b &lt;- c(50,55,53)
-matrix_ver &lt;- matrix(c(stock_a,stock_b), nrow = 3, ncol = 2)
-cbind_matrix_ver &lt;- cbind(stock_a, stock_b)
-rownames(matrix_ver) &lt;- c(1,2,3)
-colnames(matrix_ver) &lt;-c(&quot;Stock_A&quot;,&quot;Stock_B&quot;)
-
-matrix_ver</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBTdG9ja19BIFN0b2NrX0JcbjEgICAgIDEwMCAgICAgIDUwXG4yICAgICAxMDIgICAgICA1NVxuMyAgICAgMTAxICAgICAgNTNcbiJ9 -->
-<pre><code>  Stock_A Stock_B
-1     100      50
-2     102      55
-3     101      53</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1mcmFtZS1iZWdpbiBleUp0WlhSaFpHRjBZU0k2ZXlKamJHRnpjMlZ6SWpwYkltUmhkR0V1Wm5KaGJXVWlYU3dpYm5KdmR5STZNeXdpYm1OdmJDSTZNeXdpYzNWdGJXRnllU0k2VzExOUxDSnlaR1lpT2lKSU5ITkpRVUZCUVVGQlFVRkNjakpUTUZVMlJFMUNVMGQ2TW1weVRXaExUbmxXTjBKWGVHTlpWMlZMYkVkMVRVUTJSWGd5V25weFIxTkdXVzluVXpkeGJsTXJkVEpEUzBoR1duaEhSVFZYYXpsUGRtaGlPQzlRTm1KdE5sZEJWSFYzWjFWQlFYQlJVa2xGZDJwelNuWTFOV1pGU2tGSVdEQlpaMEZWVW01eVpVczJTbmxKZUZOQlRUWTNiRUZOTVdOeU5tdGxhRGRhTm01dlZISnhUa013V0RCbVptZzJNR2R4TmxodmFGWnBVbmhRWlhGc05XUnNVRWt6UzFKcmEzaExVR2Q1UlhNeVEwZG5WM2xsYzNGU1IxSmtTbTVIYkRRdlkxUnJPRVp5U21OSU1UZGFjbXd3Wm5WaVUzRm1OMU15VEd4c2FsQjVNMDFVU3pKemNFcEhUVkJCVW5CbmFFSlVNRW80ZWpsMmFXUkpkQ3RVSzJwTmRrcGFiVXhSVlRrdk1UbHVOMjVhUzB0SWFVcHVXVXBDWkRoVlZtNDVkMVkxYjJVM09HeEZhRWg1WWxsWVMySk5lbkpPSzFaV1dERlpkREJOYzJad1pIZ3JSRUZJU0VJMlFsQm9XVEUzVUZST2EyMVVja1ZZSzJsRk5sWldSbmd3TUROM05DdDJaRlJ0WWtaNk5ucERWVmx3VG0xS1ltRkZjbWQzZVhremJHTldLMmszWlRBeU9UaGFVRTFXVTB0NlJYSlBMMEZWTWtZd2MwcDFRa0ZCUVNKOSAtLT5cblxuPGRpdiBkYXRhLXBhZ2VkdGFibGU9XCJmYWxzZVwiPlxuICA8c2NyaXB0IGRhdGEtcGFnZWR0YWJsZS1zb3VyY2UgdHlwZT1cImFwcGxpY2F0aW9uL2pzb25cIj5cbntcImNvbHVtbnNcIjpbe1wibGFiZWxcIjpbXCJUaWNrZXJcIl0sXCJuYW1lXCI6WzFdLFwidHlwZVwiOltcImRibFwiXSxcImFsaWduXCI6W1wicmlnaHRcIl19LHtcImxhYmVsXCI6W1wiU3RvY2tfQVwiXSxcIm5hbWVcIjpbMl0sXCJ0eXBlXCI6W1wiZGJsXCJdLFwiYWxpZ25cIjpbXCJyaWdodFwiXX0se1wibGFiZWxcIjpbXCJTdG9ja19CXCJdLFwibmFtZVwiOlszXSxcInR5cGVcIjpbXCJkYmxcIl0sXCJhbGlnblwiOltcInJpZ2h0XCJdfV0sXCJkYXRhXCI6W3tcIjFcIjpcIjFcIixcIjJcIjpcIjEwMFwiLFwiM1wiOlwiNTBcIn0se1wiMVwiOlwiMlwiLFwiMlwiOlwiMTAyXCIsXCIzXCI6XCI1NVwifSx7XCIxXCI6XCIzXCIsXCIyXCI6XCIxMDFcIixcIjNcIjpcIjUzXCJ9XSxcIm9wdGlvbnNcIjp7XCJjb2x1bW5zXCI6e1wibWluXCI6e30sXCJtYXhcIjpbMTBdLFwidG90YWxcIjpbM119LFwicm93c1wiOntcIm1pblwiOlsxMF0sXCJtYXhcIjpbMTBdLFwidG90YWxcIjpbM119LFwicGFnZXNcIjp7fX19XG4gIDxcL3NjcmlwdD5cbjxcL2Rpdj5cblxuPCEtLSBybmItZnJhbWUtZW5kIC0tPlxuIn0= -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6Mywic3VtbWFyeSI6W119LCJyZGYiOiJINHNJQUFBQUFBQUFCcjJTMFU2RE1CU0d6MmpyTWhLTnlWN0JXeGNZV2VLbEd1TUQ2RXgyWnpxR1NGWW9nUzdxblMrdTJDS0hGWnhHRTVXazlPdmhiOC9QNmJtNldBVHV3Z1VBQXBRUklFd2pzSnY1NWZFSkFIWDBZZ0FVUm5yZUs2SnlJeFNBTTY3bEFNMWNyNmtlaDdaNm5vVHJxTkMwWDBmZmg2MGdxNlhvaFZpUnhQZXFsNWRsUEkzS1Jra3hLUGd5RXMyQ0dnV3llc3FSR1JkSm5HbDQvY1RrOEZySmNIMTdacmwwZnViU3FmN1MyTGxsalB5M01USzJzcEpHTVBBUnBnaEJUMEo4ejl2aWRJdCtUK2pNdkpabUxRVTkvMTluN25aS0tIaUpuWUpCZDhVVm45d1Y1b2U3OGxFaEh5YllYS2JNenJOK1ZWWDFZdDBNc2ZwZHgrREFISEI2QlBoWTE3UFROa21UckVYK2lFNlZWRngwMDN3NCt2ZFRtYkZ6NnpDVVlwTm1KYmFFcmd3eXkzbGNWK2k3ZTAyOThaUE1WU0t6RXJPL0FVMkYwc0p1QkFBQSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Ticker"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Stock_A"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Stock_B"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"100","3":"50"},{"1":"2","2":"102","3":"55"},{"1":"3","2":"101","3":"53"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogImJhc2ljcyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNClZlY3RvcnMgDQotIEluIFIsIHRoZXJlIGlzIG5vIHN1Y2ggdGhpbmcgYXMgYSAic2NhbGFyIiAoYSBzaW5nbGUgbnVtYmVyKS4gRXZlbiBhIHNpbmdsZSBudW1iZXIgaXMganVzdCBhIHZlY3RvciBvZiBsZW5ndGggMQ0KLSBXZSB1c2UgdGhlIGMoKSBmdW5jdGlvbiAod2hpY2ggc3RhbmRzIGZvciBjb21iaW5lIG9yIGNvbmNhdGVuYXRlKSB0byBjcmVhdGUgdmVjdG9ycy4gDQotIFIgZXhjZWxzIGF0IHZlY3Rvcml6ZWQgbWF0aCwgbWVhbmluZyB5b3UgY2FuIHBlcmZvcm0gb3BlcmF0aW9ucyBvbiB3aG9sZSB2ZWN0b3JzIHdpdGhvdXQgd3JpdGluZyBmb3IgbG9vcHMuDQoNCmBgYHtyfQ0KIyBDcmVhdGluZyBhIG51bWVyaWMgdmVjdG9yIG9mIHN0b2NrIHByaWNlcw0KcHJpY2VzIDwtIGMoMTUwLjUsIDE1Mi4wLCAxNDkuNSwgMTU1LjIpDQoNCiMgVmVjdG9yaXplZCBvcGVyYXRpb25zOiBDYWxjdWxhdGluZyBzaW1wbGUgcmV0dXJucyBhZ2FpbnN0IGEgYmFzZSBwcmljZQ0KYmFzZV9wcmljZSA8LSAxNTAuMA0KcmV0dXJucyA8LSAocHJpY2VzIC8gYmFzZV9wcmljZSkgLSAxDQoNCiMgUHJpbnRpbmcgdGhlIHJlc3VsdA0KcHJpbnQocmV0dXJucykNCmBgYA0KDQpCeSBkZWZhdWx0LCBSIGZpbGxzIG1hdHJpY2VzIGNvbHVtbiBieSBjb2x1bW4uIElmIHlvdSB3YW50IGl0IHRvIGZpbGwgcm93IGJ5IHJvdywgeW91IG11c3Qgc3BlY2lmeSBieXJvdyA9IFRSVUUNCg0KYGBge3J9DQojIENyZWF0aW5nIGEgMngyIG1hdHJpeCBvZiBwb3J0Zm9saW8gd2VpZ2h0cw0KcG9ydGZvbGlvX3dlaWdodHMgPC0gbWF0cml4KGMoMC40LCAwLjYsIDAuNSwgMC41KSwgbnJvdyA9IDIsIG5jb2wgPSAyKQ0KcG9ydGZvbGlvX3dlaWdodHNfYnlfcm93X2ZpbGwgPC0gbWF0cml4KGMoMC40LCAwLjYsIDAuNSwgMC41KSwgbnJvdyA9IDIsIG5jb2wgPSAyLCBieXJvdyA9IFRSVUUpDQoNCiMgQXNzaWduaW5nIG5hbWVzIHRvIHJvd3MgYW5kIGNvbHVtbnMgZm9yIGNsYXJpdHkNCnJvd25hbWVzKHBvcnRmb2xpb193ZWlnaHRzKSA8LSBjKCJBc3NldCBBIiwgIkFzc2V0IEIiKQ0KY29sbmFtZXMocG9ydGZvbGlvX3dlaWdodHMpIDwtIGMoIlBvcnRmb2xpbyAxIiwgIlBvcnRmb2xpbyAyIikNCg0KcHJpbnQocG9ydGZvbGlvX3dlaWdodHMpDQpwcmludChwb3J0Zm9saW9fd2VpZ2h0c19ieV9yb3dfZmlsbCkNCmBgYA0KDQpEYXRhRnJhbWVzIGFyZSB0aGUgZXF1aXZhbGVudCBvZiBhIHNwcmVhZHNoZWV0IG9yIGEgU1FMIHRhYmxlLiANCi0gVW5saWtlIGEgbWF0cml4LCBlYWNoIGNvbHVtbiBpbiBhIERhdGFGcmFtZSBjYW4gYmUgYSBkaWZmZXJlbnQgZGF0YSB0eXBlIChlLmcuLCBudW1lcmljIHByaWNlcyBpbiBvbmUgY29sdW1uLCBjaGFyYWN0ZXIgdGlja2VycyBpbiBhbm90aGVyKS4NCg0KYGBge3J9DQptYXJrZXRfZGF0YSA8LSBkYXRhLmZyYW1lKA0KICBUaWNrZXIgPSBjKCJBQVBMIiwgIkdPT0dMIiwgIk1TRlQiKSwNCiAgUHJpY2UgPSBjKDE4MC41LCAxNDAuMiwgMzMwLjEpLA0KICBUZWNoU2VjdG9yID0gYyhUUlVFLCBUUlVFLCBUUlVFKQ0KKQ0KbWFya2V0X2RhdGENCmBgYA0KDQpBZGRpdGlvbmFsIGNvbnRleHQNCjwtIGlzIGZvciBFbnZpcm9ubWVudCBBc3NpZ25tZW50OiBZb3UgdXNlIHRoZSBhcnJvdyB3aGVuIHlvdSBhcmUgY3JlYXRpbmcgYSBicmFuZCBuZXcgb2JqZWN0IChsaWtlIGEgdmFyaWFibGUsIHZlY3Rvciwgb3IgZGF0YWZyYW1lKSBhbmQgc2F2aW5nIGl0IGludG8geW91ciB3b3Jrc3BhY2UvbWVtb3J5Lg0KDQo9IGlzIGZvciBBcmd1bWVudCBBc3NpZ25tZW50OiBZb3UgdXNlIHRoZSBlcXVhbHMgc2lnbiBpbnNpZGUgdGhlIHBhcmVudGhlc2VzIG9mIGEgZnVuY3Rpb24gdG8gcGFzcyB2YWx1ZXMgdG8gc3BlY2lmaWMgYXJndW1lbnRzIG9yIHRvIG5hbWUgdGhpbmdzIHdpdGhpbiB0aGF0IGZ1bmN0aW9uLg0KDQpUYXNrDQoNCllvdXIgVGFza3M6DQpWZWN0b3JzOiBDcmVhdGUgdHdvIG51bWVyaWMgdmVjdG9ycy4NCi0gc3RvY2tfYSB3aXRoIHByaWNlczogMTAwLCAxMDIsIDEwMQ0KLSBzdG9ja19iIHdpdGggcHJpY2VzOiA1MCwgNTUsIDUzDQoNCk1hdHJpeDogQ29tYmluZSB0aGVzZSB0d28gdmVjdG9ycyBpbnRvIGEgc2luZ2xlIDN4MiBtYXRyaXggcmVwcmVzZW50aW5nIHlvdXIgcHJpY2UgZGF0YS4gKEhpbnQ6IFlvdSBjYW4gdXNlIHRoZSBtYXRyaXgoKSBmdW5jdGlvbiB3ZSBkaXNjdXNzZWQsIG9yIGxvb2sgdXAgYSBoYW5keSBSIGZ1bmN0aW9uIGNhbGxlZCBjYmluZCgpIHdoaWNoIGJpbmRzIGNvbHVtbnMgdG9nZXRoZXIpLg0KDQpEYXRhRnJhbWU6IENyZWF0ZSBhIERhdGFGcmFtZSB0aGF0IGluY2x1ZGVzIHRocmVlIGNvbHVtbnM6DQotIERheTogQSB2ZWN0b3IgY29udGFpbmluZyB0aGUgZGF5cyAxLCAyLCBhbmQgMy4NCi0gU3RvY2tfQTogWW91ciBmaXJzdCBwcmljZSB2ZWN0b3IuDQotIFN0b2NrX0I6IFlvdXIgc2Vjb25kIHByaWNlIHZlY3Rvci4NCg0KYGBge3J9DQpzdG9ja19hIDwtIGMoMTAwLDEwMiwxMDEpDQpzdG9ja19iIDwtIGMoNTAsNTUsNTMpDQptYXRyaXhfdmVyIDwtIG1hdHJpeChjKHN0b2NrX2Esc3RvY2tfYiksIG5yb3cgPSAzLCBuY29sID0gMikNCmNiaW5kX21hdHJpeF92ZXIgPC0gY2JpbmQoc3RvY2tfYSwgc3RvY2tfYikNCnJvd25hbWVzKG1hdHJpeF92ZXIpIDwtIGMoMSwyLDMpDQpjb2xuYW1lcyhtYXRyaXhfdmVyKSA8LWMoIlN0b2NrX0EiLCJTdG9ja19CIikNCm1hdHJpeF92ZXINCmBgYA0KYGBge3J9DQogZGF0YS5mcmFtZSgNCiAgVGlja2VyID0gYygxLDIsMyksDQogIFN0b2NrX0EgPSBjKDEwMCwxMDIsMTAxKSwNCiAgU3RvY2tfQiA9IGMoNTAsNTUsNTMpKQ0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogImRhdGFfd3JhbmdsaW5nIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCmBgYHtyfQ0KaW5zdGFsbC5wYWNrYWdlcygiZHBseXIiKQ0KYGBgDQoNCg0KS2V5OiBwaXBlICglPiUgb3IgdGhlIG5ld2VyIGJhc2UgUiB2ZXJzaW9uIHw+ICkuDQotIEl0IHRha2VzIHdoYXRldmVyIGlzIG9uIGl0cyBsZWZ0IGFuZCBmZWVkcyBpdCBpbnRvIHRoZSBmdW5jdGlvbiBvbiBpdHMgcmlnaHQuIFRoaXMgYWxsb3dzIHlvdSB0byBjaGFpbiBjb21tYW5kcyB0b2dldGhlciBiZWF1dGlmdWxseSB3aXRob3V0IG5lc3RpbmcgZnVuY3Rpb25zIGluc2lkZSBlYWNoIG90aGVyLg0KDQoxLiBzZWxlY3QoKTogV29ya2luZyB3aXRoIENvbHVtbnMNClVzZSBzZWxlY3QoKSB3aGVuIHlvdSB3YW50IHRvIGtlZXAsIGRyb3AsIG9yIHJlb3JkZXIgc3BlY2lmaWMgY29sdW1ucyBpbiB5b3VyIERhdGFGcmFtZS4NCg0KMi4gZmlsdGVyKCk6IFdvcmtpbmcgd2l0aCBSb3dzDQpVc2UgZmlsdGVyKCkgdG8gc3Vic2V0IHlvdXIgZGF0YSBiYXNlZCBvbiBsb2dpY2FsIGNvbmRpdGlvbnMgKGUuZy4sICJvbmx5IHNob3cgbWUgcm93cyB3aGVyZSB0aGUgcHJpY2UgaXMgZ3JlYXRlciB0aGFuIDEwMCIpLiANCi0gTm90ZTogUiB1c2VzID09IGZvciBsb2dpY2FsIGVxdWFscy4NCg0KMy4gbXV0YXRlKCk6IENyZWF0aW5nIE5ldyBEYXRhDQpVc2UgbXV0YXRlKCkgdG8gYWRkIGJyYW5kIG5ldyBjb2x1bW5zIHRvIHlvdXIgRGF0YUZyYW1lLCB1c3VhbGx5IGNhbGN1bGF0ZWQgZnJvbSBleGlzdGluZyBjb2x1bW5zLg0KDQpgYGB7cn0NCmxpYnJhcnkoZHBseXIpDQoNCiMgMS4gT3VyIHJhdyBEYXRhRnJhbWUNCnJhd19wb3J0Zm9saW8gPC0gZGF0YS5mcmFtZSgNCiAgVGlja2VyID0gYygiQUFQTCIsICJHT09HTCIsICJUU0xBIiwgIk1TRlQiLCAiQU1aTiIpLA0KICBTZWN0b3IgPSBjKCJUZWNoIiwgIlRlY2giLCAiQXV0byIsICJUZWNoIiwgIkNvbnN1bWVyIiksDQogIFByaWNlID0gYygxODUuMCwgMTQwLjAsIDI1MC4wLCAzMzUuMCwgMTMwLjApLA0KICBTaGFyZXMgPSBjKDEwLCAxNSwgNSwgMjAsIDUwKQ0KKQ0KDQojIDIuIFRoZSBkcGx5ciBwaXBlbGluZQ0KdGVjaF9zdW1tYXJ5IDwtIHJhd19wb3J0Zm9saW8gJT4lDQogIGZpbHRlcihTZWN0b3IgPT0gIlRlY2giKSAlPiUgICAgICAgICAgICAgICAgICAjIEtlZXAgT05MWSBUZWNoIHN0b2Nrcw0KICBzZWxlY3QoVGlja2VyLCBQcmljZSwgU2hhcmVzKSAlPiUgICAgICAgICAgICAgIyBEcm9wIHRoZSBTZWN0b3IgY29sdW1uDQogIG11dGF0ZShQb3NpdGlvbl9WYWx1ZSA9IFByaWNlICogU2hhcmVzKSAgICAgICAjIENhbGN1bGF0ZSB0b3RhbCAkIHZhbHVlDQoNCnByaW50KHRlY2hfc3VtbWFyeSkNCmBgYA0KDQpgYGB7cn0NCmZ4X2RhdGEgPC0gZGF0YS5mcmFtZSgNCiAgUGFpciA9IGMoIkVVUi9VU0QiLCAiR0JQL1VTRCIsICJKUFkvVVNEIiwgIkVVUi9VU0QiLCAiR0JQL1VTRCIsICJKUFkvVVNEIiksDQogIERheSA9IGMoMSwgMSwgMSwgMiwgMiwgMiksDQogIE9wZW5fUmF0ZSA9IGMoMS4wOCwgMS4yNiwgMC4wMDY4LCAxLjA5LCAxLjI1LCAwLjAwNjkpLA0KICBDbG9zZV9SYXRlID0gYygxLjA5LCAxLjI3LCAwLjAwNjcsIDEuMDgsIDEuMjYsIDAuMDA3MCksDQogIFZvbHVtZSA9IGMoMTAwMCwgODUwLCAxMjAwLCAxMTAwLCA5MDAsIDEzMDApDQopDQpgYGANCg0KWW91ciBUYXNrczoNClVzaW5nIGRwbHlyIGFuZCB0aGUgcGlwZSAoJT4lKToNCg0KRmlsdGVyIHRoZSBmeF9kYXRhIHRvIG9ubHkgc2hvdyB0cmFkZXMgdGhhdCBoYXBwZW5lZCBvbiBEYXkgMS4NCg0KU2VsZWN0IG9ubHkgdGhlIFBhaXIsIE9wZW5fUmF0ZSwgYW5kIENsb3NlX1JhdGUgY29sdW1ucyAoZHJvcCBEYXkgYW5kIFZvbHVtZSkuDQoNCk11dGF0ZSBhIG5ldyBjb2x1bW4gY2FsbGVkIERhaWx5X0NoYW5nZSB3aGljaCBpcyBjYWxjdWxhdGVkIGFzIENsb3NlX1JhdGUgLSBPcGVuX1JhdGUuDQoNCmBgYHtyfQ0KZnhfZGF0YSAlPiUgZmlsdGVyKERheSA9PSAxKSAlPiUgc2VsZWN0KFBhaXIsIE9wZW5fUmF0ZSwgQ2xvc2VfUmF0ZSkgJT4lIG11dGF0ZShEYWlseV9DaGFuZ2UgPSBDbG9zZV9SYXRlIC0gT3Blbl9SYXRlKQ0KYGBgDQoNCg0K</div>
 
 
 
@@ -1925,7 +1920,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("basics.Rmd");
+  window.initializeSourceEmbed("data_wrangling.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

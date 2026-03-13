@@ -1,0 +1,52 @@
+---
+title: "data_viz"
+output: html_notebook
+---
+
+
+```{r}
+install.packages("ggplot2")
+
+```
+```{r}
+fx_data <- data.frame(
+  Pair = c("EUR/USD", "GBP/USD", "JPY/USD", "EUR/USD", "GBP/USD", "JPY/USD"),
+  Day = c(1, 1, 1, 2, 2, 2),
+  Open_Rate = c(1.08, 1.26, 0.0068, 1.09, 1.25, 0.0069),
+  Close_Rate = c(1.09, 1.27, 0.0067, 1.08, 1.26, 0.0070),
+  Volume = c(1000, 850, 1200, 1100, 900, 1300)
+)
+```
+
+Here are the three essential layers every ggplot needs:
+
+Data: The DataFrame you are plotting (e.g., fx_data).
+Aesthetics (aes): How your data maps to visual elements like the x-axis, y-axis, color, or size.
+Geometries (geom): The actual shape of the plot (e.g., geom_point() for a scatter plot, geom_line() for a line chart, geom_col() for a bar chart).
+
+```{r}
+# Load the package
+library(ggplot2)
+
+# Building the plot layer by layer
+ggplot(data = fx_data, aes(x = Open_Rate, y = Close_Rate, color = Pair)) +
+  geom_point(size = 3) +                            # Adds the scatter plot dots
+  labs(title = "FX Open vs Close Rates",            # Adds titles and labels
+       x = "Opening Price", 
+       y = "Closing Price") +
+  theme_minimal()                                   # Gives it a clean, professional look
+```
+Using ggplot2, write the code to create a bar chart (column chart):
+
+Data: Use fx_data.
+Aesthetics (aes): Map the x-axis to Pair and the y-axis to Volume.
+Geometry: Add the appropriate geom for a column/bar chart. (Hint: Look up geom_col()).
+Add a title using the labs() layer!
+
+```{r}
+ggplot(data = fx_data, aes(x= Pair, y=Volume)) +
+         geom_col() +
+       labs(title = "FX Pair vs Volume") + theme_minimal()
+```
+
+

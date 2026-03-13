@@ -1,0 +1,66 @@
+---
+title: "data_wrangling"
+output: html_notebook
+---
+```{r}
+install.packages("dplyr")
+```
+
+
+Key: pipe (%>% or the newer base R version |> ).
+- It takes whatever is on its left and feeds it into the function on its right. This allows you to chain commands together beautifully without nesting functions inside each other.
+
+1. select(): Working with Columns
+Use select() when you want to keep, drop, or reorder specific columns in your DataFrame.
+
+2. filter(): Working with Rows
+Use filter() to subset your data based on logical conditions (e.g., "only show me rows where the price is greater than 100"). 
+- Note: R uses == for logical equals.
+
+3. mutate(): Creating New Data
+Use mutate() to add brand new columns to your DataFrame, usually calculated from existing columns.
+
+```{r}
+library(dplyr)
+
+# 1. Our raw DataFrame
+raw_portfolio <- data.frame(
+  Ticker = c("AAPL", "GOOGL", "TSLA", "MSFT", "AMZN"),
+  Sector = c("Tech", "Tech", "Auto", "Tech", "Consumer"),
+  Price = c(185.0, 140.0, 250.0, 335.0, 130.0),
+  Shares = c(10, 15, 5, 20, 50)
+)
+
+# 2. The dplyr pipeline
+tech_summary <- raw_portfolio %>%
+  filter(Sector == "Tech") %>%                  # Keep ONLY Tech stocks
+  select(Ticker, Price, Shares) %>%             # Drop the Sector column
+  mutate(Position_Value = Price * Shares)       # Calculate total $ value
+
+print(tech_summary)
+```
+
+```{r}
+fx_data <- data.frame(
+  Pair = c("EUR/USD", "GBP/USD", "JPY/USD", "EUR/USD", "GBP/USD", "JPY/USD"),
+  Day = c(1, 1, 1, 2, 2, 2),
+  Open_Rate = c(1.08, 1.26, 0.0068, 1.09, 1.25, 0.0069),
+  Close_Rate = c(1.09, 1.27, 0.0067, 1.08, 1.26, 0.0070),
+  Volume = c(1000, 850, 1200, 1100, 900, 1300)
+)
+```
+
+Your Tasks:
+Using dplyr and the pipe (%>%):
+
+Filter the fx_data to only show trades that happened on Day 1.
+
+Select only the Pair, Open_Rate, and Close_Rate columns (drop Day and Volume).
+
+Mutate a new column called Daily_Change which is calculated as Close_Rate - Open_Rate.
+
+```{r}
+fx_data %>% filter(Day == 1) %>% select(Pair, Open_Rate, Close_Rate) %>% mutate(Daily_Change = Close_Rate - Open_Rate)
+```
+
+
