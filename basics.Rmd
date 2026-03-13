@@ -1,0 +1,84 @@
+---
+title: "test"
+output: html_notebook
+---
+
+Vectors 
+- In R, there is no such thing as a "scalar" (a single number). Even a single number is just a vector of length 1
+- We use the c() function (which stands for combine or concatenate) to create vectors. 
+- R excels at vectorized math, meaning you can perform operations on whole vectors without writing for loops.
+
+```{r}
+# Creating a numeric vector of stock prices
+prices <- c(150.5, 152.0, 149.5, 155.2)
+
+# Vectorized operations: Calculating simple returns against a base price
+base_price <- 150.0
+returns <- (prices / base_price) - 1
+
+# Printing the result
+print(returns)
+```
+
+By default, R fills matrices column by column. If you want it to fill row by row, you must specify byrow = TRUE
+
+```{r}
+# Creating a 2x2 matrix of portfolio weights
+portfolio_weights <- matrix(c(0.4, 0.6, 0.5, 0.5), nrow = 2, ncol = 2)
+portfolio_weights_by_row_fill <- matrix(c(0.4, 0.6, 0.5, 0.5), nrow = 2, ncol = 2, byrow = TRUE)
+
+# Assigning names to rows and columns for clarity
+rownames(portfolio_weights) <- c("Asset A", "Asset B")
+colnames(portfolio_weights) <- c("Portfolio 1", "Portfolio 2")
+
+print(portfolio_weights)
+print(portfolio_weights_by_row_fill)
+```
+
+DataFrames are the equivalent of a spreadsheet or a SQL table. 
+- Unlike a matrix, each column in a DataFrame can be a different data type (e.g., numeric prices in one column, character tickers in another).
+
+```{r}
+market_data <- data.frame(
+  Ticker = c("AAPL", "GOOGL", "MSFT"),
+  Price = c(180.5, 140.2, 330.1),
+  TechSector = c(TRUE, TRUE, TRUE)
+)
+market_data
+```
+
+Additional context
+<- is for Environment Assignment: You use the arrow when you are creating a brand new object (like a variable, vector, or dataframe) and saving it into your workspace/memory.
+
+= is for Argument Assignment: You use the equals sign inside the parentheses of a function to pass values to specific arguments or to name things within that function.
+
+Task
+
+Your Tasks:
+Vectors: Create two numeric vectors.
+- stock_a with prices: 100, 102, 101
+- stock_b with prices: 50, 55, 53
+
+Matrix: Combine these two vectors into a single 3x2 matrix representing your price data. (Hint: You can use the matrix() function we discussed, or look up a handy R function called cbind() which binds columns together).
+
+DataFrame: Create a DataFrame that includes three columns:
+- Day: A vector containing the days 1, 2, and 3.
+- Stock_A: Your first price vector.
+- Stock_B: Your second price vector.
+
+```{r}
+stock_a <- c(100,102,101)
+stock_b <- c(50,55,53)
+matrix_ver <- matrix(c(stock_a,stock_b), nrow = 3, ncol = 2)
+cbind_matrix_ver <- cbind(stock_a, stock_b)
+rownames(matrix_ver) <- c(1,2,3)
+colnames(matrix_ver) <-c("Stock_A","Stock_B")
+matrix_ver
+```
+```{r}
+ data.frame(
+  Ticker = c(1,2,3),
+  Stock_A = c(100,102,101),
+  Stock_B = c(50,55,53))
+```
+
